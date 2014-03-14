@@ -1,0 +1,52 @@
+.post-date {
+  float: right;
+}
+
+.post {
+  text-align: justify;
+}
+
+div.header {
+  margin-bottom: 20px;
+}
+
+h1.title {
+  text-align: center;
+}
+
+h1.title > a {
+  font-size: 1.5em;
+  line-height: 0.5em;
+  color: #fff;
+}
+
+h1.title > a:hover {
+  text-decoration: none !important;
+}
+
+h1.title > a > small {
+  font-size: 0.4em;
+  line-height: 0.5em;
+  color: #ddd;
+}
+
+h3.post-heading{
+  margin-top: 0;
+}
+
+.navi > a > i {
+  font-size: 2.5em;
+}
+ul.dsq-widget-list {padding: 0; font-size: 0.9em;}
+
+div.primary-cat {
+
+}
+
+.primary-cat > a {
+  font-size: 20px;
+}
+
+ul.tag-list > li {
+  vertical-align: baseline;
+}

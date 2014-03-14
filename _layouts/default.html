@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ site.name }}{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom stuff -->
+        <link rel="stylesheet" href="/css/blog.css">
+
+        <link href="/css/bootstrap.css" rel="stylesheet"
+              type="text/css" />
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <script type="text/javascript"
+                src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">
+                            <a href="/" class="btn btn-primary btn-lg">{{ site.name }}<br/><small>{{site.quote}}</small>
+                            </a>
+                        </h1>
+                        <div class="navi btn-group btn-group-justified">
+                            <a class="btn btn-sm btn-primary" title="Home" href="/"><i class="icon-home"></i><br/>Приxожая</a>
+                            <a class="btn btn-sm btn-primary" title="Recents" href="/blog/"><i class="icon-time"></i><br/>Недавнее</a>
+                            <a class="btn btn-sm btn-primary" title="Tag cloud" href="/tags/"><i class="icon-tags"></i><br/>Теги</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><i class="icon-{{ page.icon }}"></i> {{ page.title }}</h1>
+
+                    {{ content }}
+
+                </div>
+            </div>
+        </div> <!-- /container -->
+        <div id="footer" class="bg-primary">
+            <div class="container">
+                <a rel="license" href="http://creativecommons.org/licenses/by/2.0/" class="btn btn btn-primary">&copy; Павел Пеганов, 2013-2014, <wbr><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/80x15.png" /></a><wbr>
+                <a class="btn btn-info" href="http://github.com/D-side/dside"><i class="icon-code"></i>Исxодный код сайта на GitHub</a>
+            </div>
+        </div>
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>

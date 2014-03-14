@@ -1,0 +1,6 @@
+{% for tag in site.tags %}
+    <a	class="btn btn-xs btn-primary"
+			style="font-size: {{ tag | last | size | times: 50 | divided_by: site.categories.size | plus: 70 }}%"
+			href="/{{ tag | first | slugize }}/"
+		>{{ tag | first }} <span class="badge">{{ tag | last | size }}</span></a>
+{% endfor %}

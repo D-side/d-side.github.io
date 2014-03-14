@@ -1,0 +1,35 @@
+---
+layout: default
+title: Посты по тегам
+icon: tags
+---
+
+{% for tag in site.tags %}
+<h3><span class="btn btn-success btn-sm disabled">{{ tag[0] }}</span>: {% capture post_number %}{{tag[1] | size}}{% endcapture %}{{tag[1] | size}}
+{% case post_number %}
+    {% when "1" %}
+    пост
+    {% when "2" %}
+    поста
+    {% when "3" %}
+    поста
+    {% when "4" %}
+    поста
+    {% else %}
+    постов
+{% endcase %}
+</h3>
+<div class="well well-sm">
+    {% case tag[0] %}
+
+    {% when "GLSL" %}
+    <p>Язык шейдеров OpenGL ES. Рассказываю о том, как я его изучал.</p>
+
+    {% endcase %}
+
+    {% for entry in tag[1] %}
+    <p><a href="{{entry.url}}"><code>{{entry.title}}{{entry.arguments}}</code></a></p>
+    {% endfor %}
+
+</div>
+{% endfor %}
