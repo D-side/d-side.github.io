@@ -8,7 +8,6 @@ title: GeekParty
 categories:
 - Новости
 tags:
-- Twitter Bootstrap
 - Новости
 - GeekParty
 ---

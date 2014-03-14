@@ -9,7 +9,6 @@ wordpress_id: 254
 categories:
 - Новости
 tags:
-- Twitter Bootstrap
 - Новости
 ---
 
