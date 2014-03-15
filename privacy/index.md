@@ -26,5 +26,5 @@ What do I do with that? A much more simple thing only your browser knows about: 
 
 ### No, I don't want your "cookies", please keep them away
 
-I can't remove the cookie-based functionality from my websites, it's too convenient. And I haven't heard any complaints from my visitors about them.
+I won't remove the cookie-based functionality from my websites, it's too convenient. And I haven't received any complaints from my visitors about them. If you don't want cookies interfere with our experience, don't click the <i class="icon-adjust"></i> in the menu above or disable JavaScript for this site in order to disable the style switcher that uses cookies.
 

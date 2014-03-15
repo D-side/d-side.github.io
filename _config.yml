@@ -1,5 +1,5 @@
 name: D:\side\
-quote: ...не так, как xотелось бы.
+quote: ...не так, как <wbr>xотелось бы.
 markdown: redcarpet
 pygments: true
 permalink: /:title/
