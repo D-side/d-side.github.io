@@ -7,6 +7,7 @@ slug: gml-actions
 title: 'The Game Maker Language: действия'
 tags:
 - GameMaker
+- Программирование
 ---
 
 Надеюсь, с первым уроком вы уже ознакомились. Или уже знакомы с его материалом.
