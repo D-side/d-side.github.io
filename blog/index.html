@@ -11,19 +11,22 @@ icon: time
 				<span class="primary-cat"><a class="btn btn-primary btn-xs" href="{{ post.url }}#disqus_thread"></a></span>
 				<a href="{{ post.url }}">{{ post.title }}</a><span class="post-date label label-success">{{ post.date | date_to_string }}</span></h3>
 				<div class="clearfix"></div>
+				{% if post.wip %}
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h4 class="panel-title"><i class="icon icon-cog"> </i>Над постом идёт работа!</h4>
+					</div>
+					<div class="panel-body">
+						Недостающая часть скоро будет, пожелания к ней приветствуются!
+					</div>
+				</div>
+				{% endif %}
 			    <div>{{ post.excerpt }}</div>
 		</div>
     {% endfor %}
 </div>
 <div class="row">
 	<div class="navi btn-group btn-group-justified">
-		{% if nil %}
-		{% if paginator.page == 1 %}
-			<a class="btn btn-primary disabled" href="/"><i class="icon-fast-backward"> </i></a>
-		{% else %}
-			<a class="btn btn-primary" href="/"><i class="icon-fast-backward"> </i></a>
-		{% endif %}
-		{% endif %}
 
 		{% if paginator.previous_page %}
 			<a class="btn btn-primary" href="{{ paginator.previous_page_path }}"><i class="icon-hand-left"> </i></a>
@@ -32,18 +35,11 @@ icon: time
 		{% endif %}
 
 			<a class="btn disabled">{{paginator.page}}/{{paginator.total_pages}}</a>
+			
 		{% if paginator.next_page %}
 			<a class="btn btn-primary" href="{{ paginator.next_page_path }}"><i class="icon-hand-right"> </i></a>
 		{% else %}
 			<a class="btn btn-primary disabled"><i class="icon-hand-right"> </i></a>
-		{% endif %}
-
-		{% if nil %}
-		{% if paginator.page == paginator.total_pages %}
-			<a class="btn btn-primary disabled"><i class="icon-fast-forward"> </i></a>
-		{% else %}
-			<a class="btn btn-primary" href="/{{paginator.total_pages}}/"><i class="icon-fast-forward"> </i></a>
-		{% endif %}
 		{% endif %}
 
 		</div>
