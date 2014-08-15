@@ -1,0 +1,37 @@
+<time class="date">
+  <span>
+  <div class="day">{{ include.date | date: "%d" }}</div>
+  </span>
+  <span>
+  <div class="month">
+  {% assign month =  include.date | date: "%m" %}
+	{% case month %}
+	  {% when '01' %}
+	     янв
+	  {% when '02' %}
+	     фев
+	  {% when '03' %}
+	     мар
+	  {% when '04' %}
+	     апр
+	  {% when '05' %}
+	     май
+	  {% when '06' %}
+	     июн
+	  {% when '07' %}
+	     июл
+	  {% when '08' %}
+	     авг
+	  {% when '09' %}
+	     сен
+	  {% when '10' %}
+	     окт
+	  {% when '11' %}
+	     ноя
+	  {% when '12' %}
+	     дек
+	{% endcase %}
+  </div>
+  <div class="year">{{ include.date | date: "%Y" }}</div>
+  </span>
+</time>

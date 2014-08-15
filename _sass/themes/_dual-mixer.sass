@@ -1,0 +1,31 @@
+// Based on grayscale
+
+$sample: #366
+$variation: 30deg
+
+$hue: hue($sample)
+$saturation: saturation($sample)
+
+// Monotones
+$theme00: hsl($hue, $saturation, lightness(#101010))
+$theme01: hsl($hue, $saturation, lightness(#252525))
+$theme02: hsl($hue, $saturation, lightness(#464646))
+$theme03: hsl($hue, $saturation, lightness(#525252))
+$theme04: hsl($hue, $saturation, lightness(#ababab))
+$theme05: hsl($hue, $saturation, lightness(#b9b9b9))
+$theme06: hsl($hue, $saturation, lightness(#e3e3e3))
+$theme07: hsl($hue, $saturation, lightness(#f7f7f7))
+
+$sample: complement($sample)
+$hue: hue($sample)
+$saturation: saturation($sample)
+
+// Accents
+$theme08: hsl($hue, $saturation, lightness(#7c7c7c))
+$theme09: hsl($hue, $saturation, lightness(#999999))
+$theme0A: hsl($hue, $saturation, lightness(#a0a0a0))
+$theme0B: hsl($hue, $saturation, lightness(#8e8e8e))
+$theme0C: hsl($hue, $saturation, lightness(#868686))
+$theme0D: hsl($hue, $saturation, lightness(#686868))
+$theme0E: hsl($hue, $saturation, lightness(#747474))
+$theme0F: hsl($hue, $saturation, lightness(#5e5e5e))

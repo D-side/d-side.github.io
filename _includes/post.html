@@ -1,0 +1,17 @@
+<article class="post">
+  <span>{% include date.html date=include.post.date %}</span><a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+  {% if include.post.plan %}
+  <ul>
+    {% for point in include.post.plan %}
+    <li>{{ point }}</li>
+    {% endfor %}
+    {% if include.post.todo %}
+      {% for point in include.post.todo %}
+      <li class="todo">{{ point }} <code>// TODO</code></li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+  {% else %}
+  <p>{{include.post.excerpt}}</p>
+  {% endif %}
+</article>

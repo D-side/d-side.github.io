@@ -1,0 +1,171 @@
+---
+---
+
+// Theme
+//@import "themes/solarized"
+@import "themes/near-mixer"
+//@import "themes/mix/contrast"
+
+// Libs (thanks, thoughtbot!)
+@import 'bourbon'
+@import 'base/base'
+@import 'neat'
+@import 'font-awesome'
+
+a.post-link
+  font-size: 1.5em
+
+.post
+  padding: 1em
+  background-color: $theme00
+  margin-bottom: flex-gutter()
+  &:last-child
+    margin-bottom: 0
+
+.post-link
+  margin: 0.5em
+
+li.todo
+  color: $theme0D
+
+body
+  background-color: $theme00
+  +outer_container
+
+main
+  background-color: $theme01
+  margin: 1em 0
+  +pad
+
+footer
+  margin: flex-gutter()
+
+header
+  margin: flex-gutter()
+  span
+    color: $theme04
+    +transition(color 0.2s)
+
+    &.title
+      color: $theme0E
+
+    a
+      color: inherit
+      &:hover
+        color: inherit
+    &:hover
+      color: $theme0D
+    &:after
+      content: "\\"
+      color: $theme04
+      &:hover
+        color: $theme04
+
+  h1
+    font-size: 5em
+    a
+      border: none
+      color: inherit
+      &:hover
+        color: $theme04
+        border: none
+
+nav
+  
+  &.pagination
+    text-align: center
+
+  &:not(.pagination) > a
+    width: 100%
+    display: block
+  a
+    font-size: $base-font-size * 2.25
+    margin-bottom: 0.2em
+    border: none
+    .fa:not(.suppress)
+      background-color: $theme04
+      color: $theme00
+      border-radius: 0.3em
+      padding-bottom: 0.4em
+      padding-top: 0.2em
+      width: 1.5em
+      height: 1.5em
+      text-align: center
+      box-sizing: border-box
+      box-shadow: inset 0 -0.1em 0.1em 0.1em $theme02
+      +transition(all, 0.2s)
+    &:hover > .fa:not(.suppress)
+      background-color: $theme08
+      box-shadow: inset 0 -0.1em 0.1em 0.1em $theme01
+
+time
+  font-family: $monospace
+  display: inline-block
+  text-align: center
+  line-height: 1em
+  color: $theme05
+  vertical-align: top
+  div
+    padding: 0 0.1em
+  .day
+    //background-color: $theme03
+    font-size: 1.7em
+    border: 4px solid $theme05
+    line-height: 1.1em
+    
+  .month
+    color: $theme01
+    padding: 0.2em
+    padding-top: 0
+    background-color: $theme05
+  .year
+    padding: 2px
+
+.pull-right
+  float: right
+
+// Syntax highlighting
+// Pygments/Rouge
+@import "syntax"
+
+pre
+  padding: 1em
+  box-sizing: border-box
+  //box-shadow: inset $shadow-offset $shadow-offset $shadow-blur 0 $shadow-color
+  //+word-wrap
+  overflow-x: auto
+  background-color: $background
+  font-weight: 800
+
+code
+  background-color: $background
+  border-radius: 0.3em
+  padding: 0.2em 0.4em
+
+pre
+  color: $theme05
+  code
+    padding: 0
+
+abbr
+  border: 1px solid $theme05
+  border-radius: 0.2em
+  +transition(border-color, 0.2s)
+  &:hover
+    border-color: $theme03
+
+kbd
+  background-color: $theme04
+  color: $theme00
+  border-radius: 0.3em
+  padding: 0.1em 0.4em 0.4em 0.4em
+  margin: 0.1em
+  box-shadow: inset 0 -0.1em 0.2em 0.15em $theme02
+
+mark
+  background-color: $theme04
+  color: $theme00
+  border-radius: 0.3em
+  padding: 0.1em 0.4em 0.4em 0.4em
+  margin: 0.1em
+  box-shadow: inset 0 -0.1em 0.2em 0.15em $theme02
