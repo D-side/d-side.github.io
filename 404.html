@@ -1,3 +1,9 @@
+---
+layout: none
+link: "#92533e"
+text: "#cdbc89"
+back: "#161302"
+---
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,33 +16,33 @@
                 margin:0;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                 font-size: 2em;
-                background-color: #007fff;
+                background-color: {{page.back}};
             }
             #header {
                 width: 100%;
-                background-color: #007fff;
+                background-color: {{page.back}};
                 margin: 0;
-                color: #fff;
+                color: {{page.text}};
                 padding: 5px;
                 font-size: 5em;
             }
             h1 {
                 font-weight: 400;
                 margin: 0;
-                color: #007fff;
+                color: {{page.back}};
             }
             a {
-                color: #007fff;
+                color: {{page.link}};
                 text-decoration: none;
             }
             div {
-                border: solid #007fff;
+                border: solid {{page.back}};
                 border-width: 6px 0;
-                background-color: #fff;
+                background-color: {{page.text}};
             }
 
             .e {
-                color: #ccf;
+                color: {{page.link}};
                 font-size: 0.5em;
                 list-style: none;
                 font-weight: 800;
@@ -45,10 +51,10 @@
                 margin: 1em;;
             }
             .e > a {
-                color: #fff;
+                color: {{page.text}};
             }
             h4 {
-                color: #ccf;
+                color: {{page.back}};
                 margin: 0;
             }
         </style>

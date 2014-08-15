@@ -1,45 +1,17 @@
 ---
-layout: default
+layout: scaffold
 ---
-<p class="meta">{{ page.date | date_to_string }}</p>
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
+<main>
+	<article>
+	  <span class="pull-right">{% include date.html date=page.date %}</span>
+	  {{ content }}
+	</article>
+</main>
 
-        <div class="post">
-            {{ content }}
-        </div>
 
-        {% if page.tags.size > 0 %}
-        <div class="alert alert-info" style="padding: 10px;">
-
-            <ul class="list-inline tag-list">
-                <li class="primary-cat">
-                    <a class="btn btn-xs btn-info" href="/tags/">
-                        <i class="icon-tags pull-left"> </i>
-                    </a>
-                </li>
-                {% assign categ = page.categories | last %}
-                <li class="primary-cat"><a class="btn btn-xs btn-info" href="/{{ categ }}/">{{ categ }}</a></li>
-                {% for tag in page.tags %}
-                {% if tag != categ %}
-                <li><a class="btn btn-sm btn-info" href="/{{ tag }}/">{{ tag }}</a>
-                </li>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            //var disqus_shortname = 'dsideblog';
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//dsideblog.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-</div>
+<details>
+	<summary>LSI нашёл посты, похожие на этот. Ткните сюда.</summary>
+    {% for post in site.related_posts %}
+    	<a href="{{post.url}}">{{post.title}}</a>|
+    {% endfor %}
+</details>
