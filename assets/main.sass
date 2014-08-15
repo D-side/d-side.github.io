@@ -80,7 +80,7 @@ nav
     width: 100%
     display: block
   a
-    font-size: $base-font-size * 2.25
+    font-size: $base-font-size * 1.75
     margin-bottom: 0.2em
     border: none
     .fa:not(.suppress)
@@ -95,9 +95,11 @@ nav
       box-sizing: border-box
       box-shadow: inset 0 -0.1em 0.1em 0.1em $theme02
       +transition(all, 0.2s)
-    &:hover > .fa:not(.suppress)
-      background-color: $theme09
-      box-shadow: inset 0 -0.1em 0.1em 0.15em $theme02
+    &:hover 
+      background-color: transparentize($theme03, 0.9)
+      & > .fa:not(.suppress)
+        background-color: $theme04
+        box-shadow: inset 0  0.1em 0.1em 0.1em $theme02
 
 time
   font-family: $monospace
