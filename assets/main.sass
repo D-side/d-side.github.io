@@ -88,20 +88,25 @@ nav
       border-radius: 0.3em
       padding-bottom: 0.4em
       padding-top: 0.2em
-      width: 1.5em
-      height: 1.5em
+      width: 1.6em
+      height: 1.6em
+      margin: 0.1em
       text-align: center
       box-sizing: border-box
       box-shadow: inset 0 -0.1em 0.1em 0.1em $theme02
-      +transition(all, 0.2s)
+      +transition(all, 0.2s linear)
     &:hover 
       background-color: transparentize($theme03, 0.9)
       & > .fa:not(.suppress)
         background-color: $theme04
         box-shadow: inset 0  0 0.1em 0.1em $theme02
+        padding-bottom: 0.3em
+        padding-top: 0.3em
     &:active
       & > .fa:not(.suppress)
         box-shadow: inset 0  0.1em 0.1em 0.1em $theme02
+        padding-bottom: 0.2em
+        padding-top: 0.4em
 
 time
   font-family: $monospace
