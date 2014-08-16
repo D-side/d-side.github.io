@@ -5,7 +5,7 @@
 //@import "themes/solarized"
 $sample: #469
 @import "themes/near-mixer.sass"
-@import "themes/mix/contrast"
+//@import "themes/mix/contrast"
 
 // Libs (thanks, thoughtbot!)
 @import 'bourbon'
@@ -98,6 +98,9 @@ nav
       background-color: transparentize($theme03, 0.9)
       & > .fa:not(.suppress)
         background-color: $theme04
+        box-shadow: inset 0  0 0.1em 0.1em $theme02
+    &:active
+      & > .fa:not(.suppress)
         box-shadow: inset 0  0.1em 0.1em 0.1em $theme02
 
 time
