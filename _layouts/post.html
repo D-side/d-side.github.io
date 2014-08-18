@@ -3,7 +3,19 @@ layout: scaffold
 ---
 <main>
 	<article>
-	  <span class="pull-right">{% include date.html date=page.date %}</span>
-	  {{ content }}
+		<span class="pull-right">{% include date.html date=page.date %}</span>
+		{{ content }}
 	</article>
 </main>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'dsideblog'; // required: replace example with your forum shortname
+  (function() {
+  	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  	dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>У вас выключен JavaScript, комментарии от Disqus работать не будут. Извините.</noscript>
+<a href="http://disqus.com" class="dsq-brlink"><span class="logo-disqus">Disqus</span></a>
