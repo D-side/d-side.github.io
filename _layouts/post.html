@@ -7,11 +7,3 @@ layout: scaffold
 	  {{ content }}
 	</article>
 </main>
-
-
-<details>
-	<summary>LSI нашёл посты, похожие на этот. Ткните сюда.</summary>
-    {% for post in site.related_posts %}
-    	<a href="{{post.url}}">{{post.title}}</a>|
-    {% endfor %}
-</details>
