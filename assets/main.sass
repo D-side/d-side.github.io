@@ -14,6 +14,17 @@ $sample: #234
 @import 'neat'
 @import 'font-awesome'
 
++keyframes(blink)
+  0%
+    opacity: 1
+  50%
+    opacity: 0.3
+  100%
+    opacity: 1
+    
+#cursor
+  +animation(blink 2.0s ease-in-out infinite)
+
 a.post-link
   font-size: 1.5em
 
