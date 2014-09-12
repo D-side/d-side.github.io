@@ -3,15 +3,9 @@
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 
-//= depend_on_asset "fontawesome-webfont.eot"
-//= depend_on_asset "fontawesome-webfont.svg"
-//= depend_on_asset "fontawesome-webfont.ttf"
-//= depend_on_asset "fontawesome-webfont.woff"
-@include font-face(FontAwesome, '/assets/fontawesome-webfont');
-
 @import "font-awesome/variables";
 @import "font-awesome/mixins";
-@import "font-awesome/path";
+//@import "font-awesome/path";
 @import "font-awesome/core";
 @import "font-awesome/larger";
 @import "font-awesome/fixed-width";
