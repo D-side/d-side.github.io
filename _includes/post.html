@@ -1,5 +1,5 @@
 <article class="post">
-  <span>{% include date.html date=include.post.date %}</span><a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+  <span>{% include date.html date=include.post.date %}</span><h3><a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h3>
   {% if include.post.plan %}
   <ul>
     {% for point in include.post.plan %}
