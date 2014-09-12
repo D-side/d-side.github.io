@@ -7,6 +7,7 @@
 //= depend_on_asset "fontawesome-webfont.svg"
 //= depend_on_asset "fontawesome-webfont.ttf"
 //= depend_on_asset "fontawesome-webfont.woff"
+@include font-face(FontAwesome, '/assets/fontawesome-webfont');
 
 @import "font-awesome/variables";
 @import "font-awesome/mixins";
