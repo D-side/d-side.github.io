@@ -3,7 +3,7 @@
 
 // Theme
 //@import "themes/solarized"
-$sample: #243
+$sample: #244
 @import "themes/near-mixer.sass"
 // Mix into light theme
 //@import "themes/mix/contrast"
@@ -47,11 +47,11 @@ li.todo
 
 body
   background-color: $theme00
-  $contrast: 45
+  $contrast: 50
   $grad4: mix($theme08, $theme00, $contrast)
   $grad3: mix($theme0A, $theme00, $contrast)
   $grad2: mix($theme0C, $theme00, $contrast)
-  $grad1: mix($theme0E, $theme00, $contrast)
+  $grad1: mix($theme0F, $theme00, $contrast)
   +background-image(linear-gradient(45deg, $grad1 0%, transparent 70%), linear-gradient(135deg, $grad2 10%, transparent 80%), linear-gradient(225deg, $grad3 10%, transparent 80%), linear-gradient(315deg, $grad4 100%, transparent 70%))
   -webkit-font-smoothing: antialiased
   +outer_container
@@ -137,24 +137,25 @@ time
   display: inline-block
   text-align: center
   line-height: 1em
-  margin: 0.2em
+  margin: 0.6em 1em
   color: $theme05
   vertical-align: top
+  color: $theme01
+  background-color: $theme05
+  float: right
   div
     padding: 0 0.1em
   .day
-    //background-color: $theme03
     font-size: 1.7em
     border: 4px solid $theme05
-    line-height: 1.1em
-    
+    line-height: 1em
   .month
-    color: $theme01
     padding: 0.2em
     padding-top: 0
-    background-color: $theme05
   .year
     padding: 2px
+    color: $theme05
+    background-color: $theme00
 
 .pull-right
   float: right
