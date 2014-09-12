@@ -5,5 +5,7 @@ highlighter: pygments
 permalink: /:title/
 paginate: 5
 paginate_path: "/blog/:num/"
-mathjax: true
-lsi: true
+
+kramdown:
+  smart_quotes: lsaquo,rsaquo,laquo,raquo
+  input: GFM
