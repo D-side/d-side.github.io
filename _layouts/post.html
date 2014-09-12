@@ -7,7 +7,19 @@ layout: scaffold
 		{{ content }}
 	</article>
 </main>
-
+<ul>
+  {% for tag in page.tags %}
+    <li>
+    {{tag}}
+    {%capture entry%}{{tag}}{%endcapture%}
+    <ul>
+    {% for post in site.tags[entry] %}
+      <li><a href="{{post.url}}">{{post.title}}</a></li>
+    {%endfor%}
+    </ul>
+    </li>
+  {% endfor %}
+</ul>
 <main>
 	<div id="disqus_thread"></div>
   <script src="/assets/disqus.js" type="text/javascript"></script>
