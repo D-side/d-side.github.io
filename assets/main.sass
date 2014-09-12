@@ -3,7 +3,8 @@
 
 // Theme
 //@import "themes/solarized"
-$sample: #244
+$sample: #424
+
 @import "themes/near-mixer.sass"
 // Mix into light theme
 //@import "themes/mix/contrast"
@@ -63,7 +64,9 @@ main
   margin-bottom: flex-gutter()
 
 header
-  margin: flex-gutter()
+  background-color: $theme00
+  padding: flex-gutter()
+  margin-top: flex-gutter()
   span
     color: $theme04
     +transition(color 0.2s)
