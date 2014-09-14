@@ -2,24 +2,27 @@
 layout: scaffold
 ---
 <main>
-	<article>
-		<span class="pull-right">{% include date.html date=page.date %}</span>
-		{{ content }}
-	</article>
+  <article>
+    <span class="pull-right">{% include date.html date=page.date %}</span>
+    {{ content }}
+  </article>
 </main>
-<ul>
+
+<ul class="tags">
   {% for tag in page.tags %}
     <li>
-    {{tag}}
-    {%capture entry%}{{tag}}{%endcapture%}
-    <ul>
-    {% for post in site.tags[entry] %}
-      <li><a href="{{post.url}}">{{post.title}}</a></li>
-    {%endfor%}
-    </ul>
+      <details>
+        <summary><kbd><i class="fa fa-tag"></i> {%capture entry%}{{tag}}{%endcapture%}{{tag}}</kbd></summary>
+      <ul>
+      {% for post in site.tags[entry] %}
+        <li><a href="{{post.url}}">{{post.title}}</a></li>
+      {%endfor%}
+      </ul>
+      </details>
     </li>
   {% endfor %}
 </ul>
+
 <main>
 	<div id="disqus_thread"></div>
   <script src="/assets/disqus.js" type="text/javascript"></script>
