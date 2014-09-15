@@ -6,8 +6,9 @@ layout: post
 slug: white-nights-conclusion
 title: 'White Nights: заключение'
 wordpress_id: 541
-categories:
+tags:
 - Новости
+- White Nights
 ---
 
 Внезапно обнаружил, что эта запись всё ещё не опубликована, и глаза вылезли на лоб. Как так?!

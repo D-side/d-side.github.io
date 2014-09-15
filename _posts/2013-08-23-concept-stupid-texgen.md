@@ -6,8 +6,8 @@ layout: post
 slug: concept-stupid-texgen
 title: 'Концепт: глупый генератор текстурок'
 wordpress_id: 708
-categories:
-- Новости
+tags:
+- Игрострой
 ---
 
 Сейчас обдумывал темы LD, и пришла в голову весьма занимательная мысля.

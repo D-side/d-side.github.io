@@ -5,11 +5,7 @@ date: 2013-06-14 00:35:54+00:00
 layout: post
 slug: bootstrap-novel-draft
 title: Что ж, вроде бы работает...
-wordpress_id: 217
-categories:
-- Новости
 tags:
-- Новости
 - Веб
 - Программирование
 ---

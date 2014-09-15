@@ -5,8 +5,6 @@ date: 2013-06-06 22:32:54+00:00
 layout: post
 slug: hello-world
 title: Красный цвет сюда плохо впишется
-categories:
-- Новости
 tags:
 - Новости
 - Веб

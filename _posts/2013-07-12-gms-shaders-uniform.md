@@ -6,9 +6,8 @@ layout: post
 slug: gms-shaders-uniform
 title: 'GameMaker Studio: шейдеры, uniform'
 wordpress_id: 594
-categories:
-- Новости
 tags:
+- GameMaker
 - GLSL
 ---
 

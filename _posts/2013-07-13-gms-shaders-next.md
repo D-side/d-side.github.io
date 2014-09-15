@@ -4,9 +4,8 @@ comments: true
 date: 2013-07-13 19:13:11+00:00
 layout: post
 title: 'GameMaker Studio: шейдеры, что дальше'
-categories:
-- Новости
 tags:
+- GameMaker
 - GLSL
 ---
 

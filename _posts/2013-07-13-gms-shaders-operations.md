@@ -6,9 +6,8 @@ layout: post
 slug: gms-shaders-operations
 title: 'GameMaker Studio: шейдеры, операции'
 wordpress_id: 600
-categories:
-- Новости
 tags:
+- GameMaker
 - GLSL
 ---
 

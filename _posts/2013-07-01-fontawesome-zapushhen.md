@@ -6,7 +6,7 @@ layout: post
 slug: fontawesome-zapushhen
 title: FontAwesome запущен!
 wordpress_id: 466
-categories:
+tags:
 - Новости
 ---
 

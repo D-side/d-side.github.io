@@ -6,9 +6,8 @@ layout: post
 slug: gms-shaders-color
 title: 'GameMaker Studio: шейдеры, цвета'
 wordpress_id: 611
-categories:
-- Новости
 tags:
+- GameMaker
 - GLSL
 ---
 

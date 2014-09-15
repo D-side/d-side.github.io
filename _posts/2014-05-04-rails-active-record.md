@@ -3,7 +3,7 @@ author: D-side
 date: 2014-05-24
 layout: post
 title: Rails и ActiveRecord
-categories:
+tags:
 - Программирование
 - Веб
 - Rails

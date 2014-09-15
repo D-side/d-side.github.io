@@ -6,9 +6,8 @@ layout: post
 slug: gms-shaders-intro
 title: 'GameMaker Studio: шейдеры, введение'
 wordpress_id: 564
-categories:
-- Новости
 tags:
+- GameMaker
 - GLSL
 ---
 

@@ -5,9 +5,6 @@ date: 2013-06-23 23:57:15+00:00
 layout: post
 slug: white-nights
 title: White Nights
-wordpress_id: 351
-categories:
-- Новости
 tags:
 - Новости
 - White Nights

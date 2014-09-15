@@ -6,8 +6,9 @@ layout: post
 slug: white-nights-day2p1
 title: 'White Nights: день второй (часть 1)'
 wordpress_id: 416
-categories:
+tags:
 - Новости
+- White Nights
 ---
 
 Частей будет две.

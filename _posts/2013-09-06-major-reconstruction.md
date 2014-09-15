@@ -1,12 +1,9 @@
 ---
 author: D-side
-comments: true
 date: 2013-09-06 14:40:52+00:00
 layout: post
-slug: major-reconstruction
 title: Большая реконструкция
-wordpress_id: 724
-categories:
+tags:
 - Новости
 ---
 

@@ -5,8 +5,6 @@ date: 2013-06-13 01:22:11+00:00
 layout: post
 slug: geekparty
 title: GeekParty
-categories:
-- Новости
 tags:
 - Новости
 - GeekParty

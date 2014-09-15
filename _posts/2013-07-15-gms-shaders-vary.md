@@ -6,9 +6,8 @@ layout: post
 slug: gms-shaders-vary
 title: 'GameMaker Studio: шейдеры, varying'
 wordpress_id: 619
-categories:
-- Новости
 tags:
+- GameMaker
 - GLSL
 ---
 
