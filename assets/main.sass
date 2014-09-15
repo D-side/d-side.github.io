@@ -235,19 +235,21 @@ kbd
       width: 20%
 
 ul.tags
-
+  details[open] > ul
+    background-color: $theme01
+    padding: 0.3em
+    list-style-type: none
+    margin-left: 0.2em
+    margin-top: -0.2em
   margin: flex-gutter()
   summary::-webkit-details-marker
     display: none
-
   kbd
     padding: 0.5em
-
+    font-family: $header-font-family
+    display: inline-block
+    width: 100%
   & > li
-    font-size: 1.2em
     display: inline-block
     vertical-align: top
-    & > small
-      background-color: $theme01
-      padding: 0.3em
-      border-radius: 0.3em
+
