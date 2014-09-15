@@ -39,4 +39,9 @@ title: Работы
 * GLSL
   * <kbd>2013</kbd> Начал изучать шейдеры в связи с их появлением в GameMaker: Studio
   * {% include tag.html tag="GLSL" %}
-
+* Веб
+  * В стародавние времена (<kbd>2010</kbd>?) работал с Joomla и WordPress
+  * <kbd>2012</kbd> освоил Twitter Bootstrap (ныне редко использую)
+  * <kbd>2014</kbd> начал изучение Sass
+  * {% include tag.html tag="Sass" %}
+  * {% include tag.html tag="Веб" %}
