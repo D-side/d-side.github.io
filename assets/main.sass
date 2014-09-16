@@ -236,21 +236,28 @@ kbd
       width: 20%
 
 ul.tags
+  margin: 0
+  margin-bottom: flex-gutter()
   details[open] > ul
-    background-color: $theme01
-    padding: 0.3em
+    padding: 0.2em
     list-style-type: none
-    margin-left: 0.2em
-    margin-top: -0.2em
-  margin: flex-gutter()
+    border: 1px solid $theme05
+    margin-top: -1px
+    //border: 1px solid $theme05
+    margin-bottom: 0
   summary::-webkit-details-marker
     display: none
-  kbd
-    padding: 0.5em
+  span
+    padding: 0.2em 0.4em
+    border: 1px solid $theme05
     font-family: $header-font-family
     display: inline-block
     width: 100%
   & > li
     display: inline-block
     vertical-align: top
+    margin: 0.1em
 
+#path
+  & > *:not(i):last-of-type
+    +animation(fadeIn 0.6s)
