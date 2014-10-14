@@ -29,9 +29,7 @@ $saturation: saturation($sample)
 $theme0A: hsl($hue, $saturation, lightness(#a0a0a0))
 $theme0B: hsl($hue, $saturation, lightness(#8e8e8e))
 
-$sample: adjust-hue($sample, -$variation)
-$sample: adjust-hue($sample, -$variation)
-$sample: adjust-hue($sample, -$variation)
+$sample: adjust-hue($sample, -3 * $variation)
 $hue: hue($sample)
 $saturation: saturation($sample)
 
