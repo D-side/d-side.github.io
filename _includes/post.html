@@ -1,17 +1,18 @@
 <article class="post">
-  <span>{% include date.html date=include.post.date %}</span><h3><a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h3>
-  {% if include.post.plan %}
-  <ul>
-    {% for point in include.post.plan %}
-    <li>{{ point }}</li>
-    {% endfor %}
-    {% if include.post.todo %}
-      {% for point in include.post.todo %}
-      <li class="todo">{{ point }} <code>// TODO</code></li>
-      {% endfor %}
-    {% endif %}
-  </ul>
-  {% else %}
+  <span>{% include date.html date=include.post.date %}</span><h3><a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>{% if post.wip %}<kbd><i class="fa fa-spinner fa-spin"></i> пишется</kbd>{% endif %}<small><a href="{{include.post.url}}#disqus_thread"><i class="fa fa-comments"></i></a></small></h3>
   <p>{{include.post.excerpt}}</p>
-  {% endif %}
+  <ul class="tags">
+    {% for tag in post.tags %}
+      <li>
+        <details>
+          <summary><span><i class="fa fa-tag"></i> {%capture entry%}{{tag}}{%endcapture%}{{tag}}</span></summary>
+        <ul>
+        {% for post in site.tags[entry] %}
+          <li><a href="{{post.url}}">{{post.title}}</a></li>
+        {%endfor%}
+        </ul>
+        </details>
+      </li>
+    {% endfor %}
+  </ul>
 </article>
