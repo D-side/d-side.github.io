@@ -5,7 +5,7 @@
 $sample: #6C1C8C
 
 //@import "themes/near-mixer.sass"
-@import "themes/base16/monokai"
+@import "themes/base16/seti"
 // Mix into light theme
 //@import "themes/mix/contrast"
 
@@ -18,11 +18,11 @@ $sample: #6C1C8C
 
 +keyframes(blink)
   0%
-    opacity: 1
-  50%
     opacity: 0
-  100%
+  50%
     opacity: 1
+  100%
+    opacity: 0
 
 +keyframes(fadeIn)
   0%
@@ -38,12 +38,13 @@ $sample: #6C1C8C
   100%
     //opacity: 1
     top: 0
-    
+
 #cursor
   &:after
     font-weight: 100
     content: "|"
-    +animation(blink 1.6s ease-in-out infinite)
+    opacity: 0
+    +animation(blink 1.6s ease-in-out 4)
     color: $theme07
   &:before
     content: ">"
@@ -74,7 +75,7 @@ body
   +background-image(linear-gradient(45deg, $grad1 0%, transparent 70%), linear-gradient(135deg, $grad2 10%, transparent 80%), linear-gradient(225deg, $grad3 10%, transparent 80%), linear-gradient(315deg, $grad4 100%, transparent 70%))
   -webkit-font-smoothing: antialiased
 
-#wrapper, footer
+header, main, footer
   +outer_container
 
 p > img:only-child
@@ -87,9 +88,13 @@ p > img:only-child
 main
   +pad
   display: block
-  margin-bottom: flex-gutter()
+  //margin-bottom: flex-gutter()
   background-color: $theme01
   +animation(fadeIn 0.5s ease-in-out)
+
+footer
+  background-color: $theme00
+  padding: 0 .7em .5em .7em
 
 header
   background-color: $theme00
@@ -130,7 +135,7 @@ header
         border: none
 
 nav
-  
+
   &.pagination
     text-align: center
 
@@ -156,7 +161,7 @@ nav
       box-sizing: border-box
       box-shadow: inset 0 -0.1em 0.1em 0.1em $theme02
       +transition(all, 0.2s linear)
-    &:hover 
+    &:hover
       background-color: transparentize($theme03, 0.9)
       & > .fa:not(.suppress)
         background-color: $theme04
