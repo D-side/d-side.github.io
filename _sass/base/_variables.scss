@@ -3,7 +3,8 @@ $sans-serif: $helvetica;
 $serif: $georgia;
 $base-font-family: $sans-serif;
 $header-font-family: 'Exo 2',  $base-font-family;
-$mono-font-family: 'Anonymous Pro', monospace;
+$mono-font-family: 'Fira Mono', monospace;
+$monospace: $mono-font-family;
 
 // Sizes
 $base-font-size: 1em;
