@@ -1,28 +1,19 @@
 ---
 ---
 
-// Theme
-//$sample: #789
-
-//@import "themes/near-mixer.sass"
+// Import a theme for further use
 @import "themes/base16/tomorrow"
-// Mix into light theme
-//@import "themes/mix/contrast"
 
 // Libs (thanks, thoughtbot!)
-@import 'bourbon'
-@import 'fonts'
-@import 'font-awesome'
-@import 'base/base'
-@import 'neat'
+@import bourbon
+@import fonts
+@import font-awesome
+@import base/base
+@import neat
 
-+keyframes(blink)
-  0%
-    opacity: 0
-  50%
-    opacity: 1
-  100%
-    opacity: 0
+$mobile: new-breakpoint(max-width 640px 4)
+
+@import cursor
 
 +keyframes(fadeIn)
   0%
@@ -30,25 +21,22 @@
   100%
     opacity: 1
 
+.half-column
+  +span-columns(6)
+  +media($mobile)
+    +span-columns(4)
 
-+keyframes(slideIn)
-  0%
-    //opacity: 0
-    top: -8em
-  100%
-    //opacity: 1
-    top: 0
+.grid-cell
+  +span-columns(6)
+  +omega(2n)
+  +media($mobile)
+    +span-columns(4)
+    +omega(n)
 
-#cursor
-  &:after
-    font-weight: 100
-    content: "|"
-    opacity: 0
-    +animation(blink 1.6s ease-in-out 4)
-    color: $theme07
-  &:before
-    content: ">"
-    color: $theme07
+.full-column
+  +span-columns(12)
+  +media($mobile)
+    +span-columns(4)
 
 .post
   padding: 1em
@@ -88,7 +76,6 @@ p > img:only-child
 main
   +pad
   display: block
-  //margin-bottom: flex-gutter()
   background-color: $theme01
   +animation(fadeIn 0.5s ease-in-out)
 
@@ -101,7 +88,6 @@ header
   padding: flex-gutter()
   margin-top: flex-gutter()
   position: relative
-  //+animation(fadeIn 0.6s ease-in-out)
 
   &:hover
     opacity: 1
@@ -135,7 +121,6 @@ header
         border: none
 
 nav
-
   &.pagination
     text-align: center
 
@@ -144,8 +129,11 @@ nav
     display: block
   a
     font-size: $base-font-size * 1.75
-    display: block
-    min-width: 100%
+    display: inline-block
+    &.menu
+      display: block
+      min-width: 100%
+      text-align: left
     margin-bottom: 0.2em
     border: none
     .fa:not(.suppress)
@@ -160,7 +148,7 @@ nav
       text-align: center
       box-sizing: border-box
       box-shadow: inset 0 -0.1em 0.1em 0.1em $theme02
-      +transition(all, 0.2s linear)
+      +transition(all, 0.2s ease-out)
     &:hover
       background-color: transparentize($theme03, 0.9)
       & > .fa:not(.suppress)

@@ -1,0 +1,18 @@
++keyframes(blink)
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+#cursor
+  &:after
+    font-weight: 100
+    content: "|"
+    opacity: 0
+    +animation(blink 1.6s ease-in-out 4)
+    color: $theme07
+  &:before
+    content: ">"
+    color: $theme07

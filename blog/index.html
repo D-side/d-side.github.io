@@ -9,14 +9,14 @@ icon: time
 	{% include post.html post=post %}
 	{% endfor %}
 </div>
-<nav class="pagination">
+<nav class="full-column pagination">
 	{% if paginator.previous_page %}
 	<a href="{{ paginator.previous_page_path }}">{% include icon.html icon="hand-o-left" %}</a>
 	{% else %}
 	<a class="disabled">{% include icon.html icon="hand-o-left" %}</a>
 	{% endif %}
 
-	<a class="btn disabled">{{paginator.page}}/{{paginator.total_pages}}</a>
+	<code>{{paginator.page}}/{{paginator.total_pages}}</code>
 
 	{% if paginator.next_page %}
 	<a href="{{ paginator.next_page_path }}">{% include icon.html icon="hand-o-right" %}</a>
