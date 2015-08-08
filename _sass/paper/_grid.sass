@@ -1,0 +1,27 @@
+$mobile: new-breakpoint(max-width 640px 4)
+
+%full-column
+  +span-columns(12)
+  +media($mobile)
+    +span-columns(4)
+  +pad
+
+%half-column
+  +span-columns(6)
+  +omega(2n)
+  +media($mobile)
+    +span-columns(4)
+    +omega(n)
+  +pad
+
+body
+  +outer_container
+
+.half-column
+  @extend %half-column
+
+.row
+  +row
+
+header, main, footer
+  @extend %full-column

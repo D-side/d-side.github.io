@@ -2,12 +2,11 @@
 layout: scaffold
 ---
 <main>
-  {% if page.wip %}<div><small><b>Этот пост ещё не написан</b>, то есть, эта страница вскоре будет исправлена, дополнена и расширена. А пока она не является завершённой, не спешите комментировать. Типично в течение недели после публикации я завершаю работу над страницей, в это время принимаю предварительные замечания.</small></div>{% endif %}
   <article>
-    <span class="pull-right">{% include date.html date=page.date %}</span>
     {{ content }}
   </article>
-  <ul class="tags">
+  <div>{% include date.html date=page.date %}</div>
+  <ul class="div">
     {% for tag in page.tags %}
       <li>
         <details>

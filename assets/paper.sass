@@ -1,0 +1,96 @@
+---
+---
+// Neat's "debug mode"
+// $visual-grid: true
+
+@import themes/base16/atelierheath
+@import themes/mix/contrast
+
+@import bourbon
+@import fonts
+@import font-awesome
+@import neat
+
+@import paper/typography
+@import paper/grid
+@import paper/search
+@import syntax
+
+=variate-border-color
+  &:nth-child(5n)
+    border-color: $theme08
+  &:nth-child(5n+1)
+    border-color: $theme09
+  &:nth-child(5n+2)
+    border-color: $theme0A
+  &:nth-child(5n+3)
+    border-color: $theme0B
+  &:nth-child(5n+4)
+    border-color: $theme0C
+
+header
+  text-align: right
+
+footer
+  border-top: 3px solid $theme03
+
+h1#path
+  text-align: left
+  font-size: 2em
+  border-bottom: 3px solid $theme02
+  padding-bottom: 6px
+  a
+    border: none
+  span:after
+    content: "\\"
+
+@import cursor
+
+.pagination
+  text-align: center
+  font-size: 3em
+  a
+    border: none
+    &.disabled
+      color: $theme02
+
+time
+  $imprint-color: mix($theme0C, $theme05)
+  font-family: "Exo 2"
+  font-weight: bold
+  border: 2px solid $imprint-color
+  padding: .2em
+  color: $imprint-color
+
+.post
+  +pad
+  box-shadow: 0 .2em .5em .1em lightgray
+  border-left: 3px solid
+  margin-bottom: flex-gutter()
+
+  a.comments
+    padding: .3em
+    border: none
+    color: $theme03
+
+.post
+  +variate-border-color
+
+ul.tags
+  list-style-type: none
+  color: $theme0E
+  font-weight: bold
+  padding: 0
+  & > li
+    display: inline-block
+    margin-right: 0.3em
+    .fa.fa-tag
+      text-shadow: .1em .1em .2em darken($theme0E, 30)
+
+ul.menu
+  list-style-type: none
+  li
+    font-size: 1.25em
+    border-left: 3px solid
+    padding: 0.5em
+    +variate-border-color
