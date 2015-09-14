@@ -54,6 +54,13 @@ h1#path
     &.disabled
       color: $theme02
 
+kbd
+  font-size: 0.85em
+  display: inline-block
+  margin: 0.1em
+  padding: 0 0.3em
+  background-color: $theme0A
+
 time
   $imprint-color: mix($theme0C, $theme05)
   font-family: "Exo 2"
@@ -64,7 +71,7 @@ time
 
 .post
   +pad
-  box-shadow: 0 .2em .5em .1em lightgray
+  box-shadow: 0 .2em .5em .1em $theme05
   border-left: 3px solid
   margin-bottom: flex-gutter()
 
@@ -84,8 +91,9 @@ ul.tags
   & > li
     display: inline-block
     margin-right: 0.3em
-    .fa.fa-tag
-      text-shadow: .1em .1em .2em darken($theme0E, 30)
+
+.fa
+  text-shadow: .1em .1em .3em transparentize($theme0E, 0.3)
 
 ul.menu
   list-style-type: none
