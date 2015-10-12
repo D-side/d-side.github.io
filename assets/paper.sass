@@ -2,9 +2,9 @@
 ---
 // Neat's "debug mode"
 // $visual-grid: true
-$sample: #568
+$sample: #537
 
-@import themes/omni-mixer
+@import themes/base16/google
 @import themes/mix/contrast
 
 @import bourbon
@@ -36,16 +36,25 @@ footer
   border-top: 3px solid $theme03
 
 h1#path
+  font-family: $monospace
+  font-weight: normal
+  padding: flex-gutter()
+  background-color: $theme07
+  color: $theme00
   text-align: left
   font-size: 2em
   border-bottom: 3px solid $theme02
   padding-bottom: 6px
+  line-height: 1.2
   a
     border: none
-  span:after
+    color: $theme08
+    .exception
+      color: $theme00
+  &>span:after
     content: "\\"
+  @import cursor
 
-@import cursor
 
 .pagination
   text-align: center
