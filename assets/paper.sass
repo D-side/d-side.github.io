@@ -2,11 +2,11 @@
 ---
 // Neat's "debug mode"
 // $visual-grid: true
-$sample: #673
-$variation: 60deg
+// $sample: #459
+// $variation: 00deg
 
-@import themes/omni-mixer
-// @import themes/mix/contrast
+@import themes/base16/embers
+@import themes/mix/contrast
 
 @import bourbon
 @import fonts
@@ -36,14 +36,11 @@ $variation: 60deg
 header
   text-align: right
 
-footer
-  border-top: 3px solid $theme03
-
 h1#path
   font-family: $monospace
   font-weight: normal
   padding: flex-gutter()
-  background-color: transparentize($theme07, 0.3)
+  background-color: $theme07
   color: $theme00
   text-align: left
   font-size: 2em
@@ -52,7 +49,7 @@ h1#path
   line-height: 1.2
   a
     border: none
-    color: $theme08
+    color: $theme0D
     .exception
       color: $theme00
   &>span:after
@@ -70,10 +67,14 @@ h1#path
 
 kbd
   font-size: 0.85em
+  font-family: $monospace
+  line-height: 0.85em
   display: inline-block
-  margin: 0.1em
-  padding: 0 0.3em
+  padding: 0.25em
   background-color: mix($theme0A, $theme00)
+  border: 1px solid mix($theme0A, $theme00)
+  border-radius: 0.4em
+  box-shadow: inset 0.1em 0.2em 0.3em $theme02
 
 time
   $imprint-color: mix($theme0C, $theme05)
@@ -86,7 +87,9 @@ time
 .post
   +pad
   margin-bottom: flex-gutter()
-  text-align: justify
+  border-width: 0 3px 3px 0
+  border-style: solid
+  +variate-border-color
 
   a.comments
     padding: .3em
@@ -112,3 +115,43 @@ ul.menu
     border-left: 3px solid
     padding: 0.5em
     +variate-border-color
+
+.palette
+  height: 7px
+  width: 6.25%
+  display: inline-block
+  margin: 0
+  border: none
+
+  &.theme00
+    background-color: $theme00
+  &.theme01
+    background-color: $theme01
+  &.theme02
+    background-color: $theme02
+  &.theme03
+    background-color: $theme03
+  &.theme04
+    background-color: $theme04
+  &.theme05
+    background-color: $theme05
+  &.theme06
+    background-color: $theme06
+  &.theme07
+    background-color: $theme07
+  &.theme08
+    background-color: $theme08
+  &.theme09
+    background-color: $theme09
+  &.theme0A
+    background-color: $theme0A
+  &.theme0B
+    background-color: $theme0B
+  &.theme0C
+    background-color: $theme0C
+  &.theme0D
+    background-color: $theme0D
+  &.theme0E
+    background-color: $theme0E
+  &.theme0F
+    background-color: $theme0F
