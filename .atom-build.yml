@@ -1,0 +1,10 @@
+cmd: echo Choose a command
+targets:
+  build:
+    cmd: jekyll build
+  serve:
+    cmd: jekyll serve -w
+  bundle:
+    cmd: bundle install
+  upgrade:
+    cmd: bundle update
