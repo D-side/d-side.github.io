@@ -3,7 +3,6 @@ author: D-side
 comments: true
 date: 2014-03-13
 layout: post
-slug: what-is-cvs
 title: Что здесь было?
 tags:
 - Новости

@@ -3,7 +3,6 @@ author: D-side
 comments: true
 date: 2014-02-07 21:10:53+00:00
 layout: post
-slug: what-is-cvs
 title: Системы контроля версий – кому это надо?
 wordpress_id: 786
 tags:
