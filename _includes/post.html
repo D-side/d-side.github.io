@@ -2,11 +2,11 @@
   <h4><a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h4>
   <p>{{ include.post.excerpt }}</p>
   <ul class="tags">
+    <li>{% include date.html date=include.post.date %}</li>
     {% for tag in post.tags %}
       <li>
         <span><i class="fa fa-tag"></i> {% capture entry %}{{ tag }}{% endcapture %}{{ tag }}</span>
       </li>
     {% endfor %}
   </ul>
-  <span>{% include date.html date=include.post.date %}</span>
 </article>

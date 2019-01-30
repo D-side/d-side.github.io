@@ -5,7 +5,7 @@
 // $sample: #459
 // $variation: 00deg
 
-@import themes/base16/embers
+@import themes/base16/brewer
 @import themes/mix/contrast
 
 @import bourbon
@@ -65,6 +65,10 @@ h1#path
     &.disabled
       color: $theme02
 
+.block
+  background-color: transparentize($theme01, 0.5)
+  padding: 0.1em 0.5em
+
 kbd
   font-size: 0.85em
   font-family: $monospace
@@ -105,16 +109,18 @@ ul.tags
     display: inline-block
     margin-right: 0.3em
 
-.fa
-  text-shadow: .1em .1em .3em transparentize($theme0E, 0.3)
+// .fa
+//   text-shadow: .1em .1em .3em transparentize($theme0E, 0.3)
 
-ul.menu
-  list-style-type: none
-  li
+.menu
+  a
+    display: block
     font-size: 1.25em
     border-left: 3px solid
     padding: 0.5em
     +variate-border-color
+    &:hover
+      background-color: transparentize($theme01, 0.5)
 
 .palette
   height: 7px

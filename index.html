@@ -2,25 +2,51 @@
 layout: page
 icon: home
 ---
-<nav class='half-column'>
-	<ul class="menu">
-		<li><a href="/blog/"><i class="fa fa-edit"></i> Блог<br/><small>чем я занимаюсь</small></a></li>
-		<li><a href="/skills/"><i class="fa fa-code-fork"></i> Навыки<br/><small>что я умею</small></a></li>
-		<li><a href="/works/"><i class="fa fa-file-code-o"></i> Работы<br/><small>что я сделал</small></a></li>
-		<li><a href="/contact/"><i class="fa fa-envelope-o"></i> Контакты<br/><small>как со мной связаться</small></a></li>
-	</ul>
-</nav>
-<article class="half-column">
-	<h3>Кто я такой?</h3>
+
+<div class="half-column">
+	<img src="https://www.gravatar.com/avatar/2bfe965ab5ef94a0568bc61c36b46d4c?s=256" />
+	<h1><i class="fa fa-user"> </i>  Кто я такой?</h1>
+	<p>Зовут меня <strong>Павел Пеганов</strong>, многим знаком под псевдонимом <strong>D-side</strong>, <strong>D-side-spb</strong> или их вариации.</p>
+	<p>Преимущественно я программист, когда-то целившийся в разработку видеоигр, а ныне обитающий в глубинах серверов. Но занимаюсь и другими вещами: образованием, самообразованием, переводом, самокопанием, мелкой инженерией и нередко <em>ерундой</em>.</p>
+	<p></p>
+	<h2><i class="fa fa-envelope-o"> </i> Как со мной связаться?</h2>
+	<p></p>
 	<ul style="margin-top:0;">
-	<li><strong>D-side</strong></li>
-	<li><strong>D-side-spb</strong></li>
-	<li><strong>Павел Пеганов</strong></li>
+		<li><a href="mailto:me@dside.ru?subject=Привет"><strong>me@dside.ru</strong></a> по e-mail</li>
+		<li><a href="https://t.me/dside_ru"><strong>@dside_ru</strong> в Telegram</a> (<a href="https://t-do.ru/dside_ru">альт. для РКН</a>)</li>
+		<li><a href="https://vk.com/s.d.side">Публичная страница VK</a></li>
+		<li><a href="https://vk.com/d.side">Личная страница VK</a> (если я вас знаю)</li>
 	</ul>
-	<p>
-		Видели какое-то из этих имён? Есть немаленькая вероятность, что это был я. Я играю в игры, пишу код и придумываю вещи. Это описание, впрочем, применимо ко многим людям на Земле.
-	</p>
-	<p>
-		Я интересуюсь языками программирования, вебом, разработкой игр и многими связанными с ними вещами, а также неплохо изъясняюсь на английском. Иногда учу некоторых чем-то пользоваться. Поскольку я многому учился самостоятельно, я особенно ценю способность к самообучению. Во многих случаях мои советы сводятся к "почитайте вот это", и как правило это материал, по которому я когда-то учился сам. А для материала, который по крупицам собирается из самых разных мест, появился этот блог.
-	</p>
-</article>
+	<h2><i class="fa fa-eye"> </i> Где вы могли меня видеть?</h2>
+	<ul style="margin-top:0;">
+		<li><a href="https://github.com/D-side">На GitHub</a></li>
+		<li><a href="https://stackoverflow.com/users/2076787/d-side">На Stack Overflow</a>, возможно <a href="https://ru.stackoverflow.com/users/181100/d-side">русскоязычном</a></li>
+		<li><a href="https://habr.com/ru/users/DsideSPb/">На Хабрахабре</a></li>
+		<li><a href="http://oxnull.net/profile/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB.html">На Oxnull</a></li>
+	</ul>
+</div>
+<div class='half-column'>
+	<h1><i class="fa fa-list"> </i> Что здесь есть?</h1>
+	<div class="menu">
+		<a href="/blog/"><i class="fa fa-edit"></i> Блог, <small>который изредка пополняется</small></a>
+		<p>Сейчас я реорганизовываю сайт, поэтому в этом меню бедновато. Со временем тут появится ещё несколько разделов.</p>
+	</div>
+	<h2><i class="fa fa-clock-o"> </i> В последнее время:</h2>
+	{% for post in site.posts limit:1 %}
+	<article class="block">
+	  <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+	  <p>{{ post.excerpt }}</p>
+		<div class="menu">
+			<a href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-forward"></i> Читать продолжение</a>
+		</div>
+	  <ul class="tags">
+			<li>{% include date.html date=post.date %}</li>
+	    {% for tag in post.tags %}
+	      <li>
+	        <span><i class="fa fa-tag"></i> {% capture entry %}{{ tag }}{% endcapture %}{{ tag }}</span>
+	      </li>
+	    {% endfor %}
+	  </ul>
+	</article>
+	{% endfor %}
+</div>
