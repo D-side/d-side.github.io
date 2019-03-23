@@ -1,6 +1,8 @@
 // Paper theme typography
 // depends on Bourbon (a little)
 
+@import ./variate
+
 $base-font-family: 'Fira Sans', 'Open Sans', 'Arial'
 $header-font-family: 'Exo 2',  $base-font-family
 $mono-font-family: 'Fira Mono', monospace
@@ -21,8 +23,8 @@ body
   color: $theme07
   font-family: $base-font-family
   line-height: $base-line-height
-  font-size: 16px
-  line-height: 26px
+  font-size: 18px
+  line-height: 30px
   margin: 0
 
 h1, h2, h3, h4, h5, h6
@@ -51,7 +53,9 @@ blockquote
   margin: .3em
   padding: .4em
   border-left: 3px solid $theme0A
+  +variate-border-color
   font-size: 0.9em
+  background-color: mix($theme00, $theme01)
   p:last-child
     margin-bottom: 0
   p:first-child

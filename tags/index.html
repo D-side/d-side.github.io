@@ -1,0 +1,18 @@
+---
+layout: page
+title: tags
+icon: tag
+---
+
+<div class="row">
+	{% for tag in site.tags reversed %}
+  <article class="post half-column">
+  <h4><i class="fa fa-tag"></i> {{ tag[0] }}</h4>
+  <ul>
+  {% for post in tag[1] %}
+  <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><small>{% include date.html date=post.date %}</small> {{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+  </article>
+	{% endfor %}
+</div>

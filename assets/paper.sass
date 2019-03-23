@@ -5,7 +5,7 @@
 // $sample: #459
 // $variation: 00deg
 
-@import themes/base16/brewer
+@import themes/base16/solarized
 @import themes/mix/contrast
 
 @import bourbon
@@ -13,22 +13,11 @@
 @import font-awesome
 @import neat
 
+@import paper/variate
 @import paper/typography
 @import paper/grid
 @import paper/search
 @import syntax
-
-=variate-border-color
-  &:nth-child(5n)
-    border-color: $theme08
-  &:nth-child(5n+1)
-    border-color: $theme09
-  &:nth-child(5n+2)
-    border-color: $theme0A
-  &:nth-child(5n+3)
-    border-color: $theme0B
-  &:nth-child(5n+4)
-    border-color: $theme0C
 
 // Uncomment for some craziness
 // @import swing
@@ -48,10 +37,12 @@ h1#path
   padding-bottom: 6px
   line-height: 1.2
   a
-    border: none
+    border-bottom: 3px solid $theme07
     color: $theme0D
     .exception
       color: $theme00
+    &:hover
+      border-bottom-color: $theme0D
   &>span:after
     content: "\\"
   @import cursor
@@ -82,7 +73,7 @@ kbd
 
 time
   $imprint-color: mix($theme0C, $theme05)
-  font-family: "Exo 2"
+  font-family: $monospace
   font-weight: bold
   border: 2px solid $imprint-color
   padding: .2em
@@ -121,6 +112,9 @@ ul.tags
     +variate-border-color
     &:hover
       background-color: transparentize($theme01, 0.5)
+  &>.unavailable
+    opacity: 0.6
+    cursor: not-allowed
 
 .palette
   height: 7px
