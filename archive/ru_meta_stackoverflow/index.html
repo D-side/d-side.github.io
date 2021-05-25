@@ -1,0 +1,15 @@
+---
+layout: page
+icon: archive
+---
+
+<p>В связи с удалением моего аккаунта со <a href="https://ru.stackoverflow.com/">Stack Overflow на русском</a> (по моей же инициативе) я создал эту страницу, чтобы иметь быстрый доступ к списку собственных ответов с Меты, где мне довелось поучаствовать в процессе саморегулирования сообщества. Список составлен на основе данных из <a href="https://data.stackexchange.com/rume/query/1077418/deleted-users-answers-link-question-title-tags-score?UserName=user181100">запроса к Data Explorer</a>.</p>
+
+<p>Часть этих ссылок ведёт на 404. Неинтуитивно, но нет, это вовсе не означает, что они мертвы и подлежат удалению из списка. В мою бытность просмотр удалённых вопросов и ответов был заперт на высокий порог репутации. Скорее всего, ситуация не изменилась и кто-то всё-таки посмотреть их **может**.</p>
+
+{% for answer in site.data.ru_meta_stackoverflow %}
+<article class="block">
+  <a href="https://ru.meta.stackoverflow.com/q/{{ answer.link }}"><strong><code>{% assign score = answer.score | plus: 0 %}{% if score > 0 %}+{%endif%}{{ answer.score }}</code></strong> {{ answer.title | xml_escape }}</a><br/><small>{{ answer.tags | replace:'<','#[' | replace:'>','#]' | replace:'#]#[','</code>, <code>' | replace:'#[','<code>' | replace:'#]','</code> ' }}</small>
+</article>
+<hr/>
+{% endfor %}
