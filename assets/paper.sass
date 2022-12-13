@@ -5,8 +5,8 @@
 // $sample: #459
 // $variation: 00deg
 
-@import themes/base16/solarized
-@import themes/mix/contrast
+@import themes/gruvbox/light-hard
+@import themes/container
 
 @import bourbon
 @import fonts
@@ -19,28 +19,82 @@
 @import paper/search
 @import syntax
 
+$faint-background: transparentize($theme01, 0.5)
+$no-print-border-color: transparentize($theme08, 0.7)
+
+// Denser print layout
+@media print
+  h1, h2, h3, h4, h5, h6, header
+    margin: 0
+  .palette, .no-print, details.no-print-collapsed:not([open])
+    display: none
+
+@media screen
+  .print-only
+    display: none
+
+.no-print
+  border: 2px dashed $no-print-border-color
+
+details.no-print-collapsed > summary
+  box-sizing: border-box
+  border: 2px dashed transparent
+
+details.no-print-collapsed:not([open]) > summary
+  box-sizing: border-box
+  border-color: $no-print-border-color
+
+span.faint-highlight
+  background-color: $faint-background
+
+span.icon
+  width: 1.5em
+  display: inline-block
+  text-align: center
+
+.hide
+  display: none
+
 // Uncomment for some craziness
 // @import swing
 
 header
   text-align: right
 
+section
+  break-inside: avoid-page
+
+summary
+  display: block
+  margin-top: 1em
+
+  & > h3, & > h4, & > h5
+    margin: 0 0
+
+details
+  padding: 0 0.5em
+  transition-property: background-color
+  transition-duration: 0.3s
+  background-color: $faint-background
+  &[open]
+    background-color: transparent
+
 h1#path
   font-family: $monospace
   font-weight: normal
   padding: flex-gutter()
-  background-color: $theme07
-  color: $theme00
+  background-color: $theme01
+  color: $theme07
   text-align: left
   font-size: 2em
   border-bottom: 3px solid $theme02
-  padding-bottom: 6px
+  padding-bottom: flex-gutter() * 0.7
   line-height: 1.2
   a
-    border-bottom: 3px solid $theme07
+    border-bottom: 2px solid $theme07
     color: $theme0D
     .exception
-      color: $theme00
+      color: $theme07
     &:hover
       border-bottom-color: $theme0D
   &>span:after
@@ -50,15 +104,15 @@ h1#path
 
 .pagination
   text-align: center
-  font-size: 3em
+  font-size: 2em
   a
     border: none
     &.disabled
       color: $theme02
 
 .block
-  background-color: transparentize($theme01, 0.5)
-  padding: 0.1em 0.5em
+  background-color: $faint-background
+  padding: 0.5em 1.5em
 
 kbd
   font-size: 0.85em
@@ -78,6 +132,20 @@ time
   border: 2px solid $imprint-color
   padding: .2em
   color: $imprint-color
+
+  &.off
+    $time-off-color: mix($theme0A, $theme05)
+    color: $time-off-color
+    border-color: $time-off-color
+
+aside
+  text-align: right
+  display: block
+  float: right
+  font-size: 0.7em
+  opacity: 0.6
+  & img
+    image-rendering: optimizeSpeed
 
 .post
   +pad
@@ -123,35 +191,6 @@ ul.tags
   margin: 0
   border: none
 
-  &.theme00
-    background-color: $theme00
-  &.theme01
-    background-color: $theme01
-  &.theme02
-    background-color: $theme02
-  &.theme03
-    background-color: $theme03
-  &.theme04
-    background-color: $theme04
-  &.theme05
-    background-color: $theme05
-  &.theme06
-    background-color: $theme06
-  &.theme07
-    background-color: $theme07
-  &.theme08
-    background-color: $theme08
-  &.theme09
-    background-color: $theme09
-  &.theme0A
-    background-color: $theme0A
-  &.theme0B
-    background-color: $theme0B
-  &.theme0C
-    background-color: $theme0C
-  &.theme0D
-    background-color: $theme0D
-  &.theme0E
-    background-color: $theme0E
-  &.theme0F
-    background-color: $theme0F
+  @each $name, $color in $theme
+    &.#{$name}
+      background-color: $color

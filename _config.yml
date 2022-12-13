@@ -13,8 +13,6 @@ plugins:
 - jekyll-paginate
 
 kramdown:
-  smart_quotes: lsaquo,rsaquo,laquo,raquo
-  input: GFM
   mathjax: true
 
 sass:
