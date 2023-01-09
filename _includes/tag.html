@@ -1,1 +1,1 @@
-<details><summary><i class="fa fa-tags"></i> Посты: <b>{{include.tag}}</b> <code>{{site.tags[include.tag]|size}}</code></summary><ol>{% assign list = site.tags[include.tag] | reverse %}{% for post in list %}<li><a href="{{post.url}}">{{post.title}}</a></li>{%endfor%}</ol></details>
+<details><summary><span class="icon">🏷️</span> Посты: <b>{{include.tag}}</b> <code>{{site.tags[include.tag]|size}}</code></summary><ol>{% assign list = site.tags[include.tag] | reverse %}{% for post in list %}<li><a href="{{post.url}}">{{post.title}}</a></li>{%endfor%}</ol></details>

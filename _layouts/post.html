@@ -10,7 +10,7 @@ layout: scaffold
     {% for tag in page.tags %}
       <li>
         <details>
-          <summary><span><i class="fa fa-tag"></i> {%capture entry%}{{tag}}{%endcapture%}{{tag}}</span></summary>
+          <summary><span><span class="icon">🏷️</span> {%capture entry%}{{tag}}{%endcapture%}{{tag}}</span></summary>
         <ul>
         {% for post in site.tags[entry] %}
           <li><a href="{{post.url}}">{{post.title}}</a></li>

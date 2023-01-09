@@ -1,25 +1,28 @@
 ---
 layout: page
-icon: home
+icon: 🏠
 ---
 
+<div class="block" style="text-align: center; font-weight: bold; font-size: large;">👨‍💻 Я в поисках <s title="Это я лучше сам.">себя</s> нового профессионального занятия. <a href="/en/cv/">Вот CV (на английском).</a></div>
+
+<div class="row">
 <div class="half-column">
-	<img src="https://www.gravatar.com/avatar/2bfe965ab5ef94a0568bc61c36b46d4c?s=256" />
+	<div class="avatar"><img src="/assets/images/avatar.png" /></div>
 	<div class="menu">
-		<a href="/en/"><i class="fa fa-language"></i> Available in English! <small>Somewhat.</small></a>
+		<a href="/en/"><span class="icon">🌎</span> Available in English! <small>Somewhat.</small></a>
 	</div>
-	<h1><i class="fa fa-user"> </i>  Меня зовут:</h1>
+	<h1><span class="icon">👤</span>  Меня зовут:</h1>
 	<p><strong>Павел Пеганов</strong>, многим знаком как <strong>D-side</strong>.</p>
 	<p>Преимущественно я программист, когда-то целившийся в разработку видеоигр, а ныне обитающий в глубинах серверов. Но занимаюсь и другими вещами: образованием, самообразованием, переводом, самокопанием, мелкой инженерией и нередко <em>ерундой</em>.</p>
-	<h2><i class="fa fa-envelope-o"> </i> Со мной можно связаться:</h2>
+	<h2><span class="icon">✉️</span> Со мной можно связаться:</h2>
 	<ul style="margin-top:0;">
-		<li>по e-mail: <a href="mailto:me@dside.ru?subject=Привет"><strong>me@dside.ru</strong></a></li>
+		<li>по e-mail: <a href="mailto:me+web@dside.ru?subject=Привет"><strong>me@dside.ru</strong></a></li>
 		<li>в Matrix: <a href="https://matrix.to/#/@dside:dside.ru"><strong>@dside:dside.ru</strong></a></li>
-		<li>в Fediverse: <a href="https://mastodon.online/@dside" rel="me">на английском</a> и <a href="https://mastodon.ml/@dside" rel="me">на русском</a></li>
+		<li>в Fediverse (<a href="https://fedi.life/">?</a>): <a href="https://mastodon.online/@dside" rel="me">на английском</a> и <a href="https://mastodon.ml/@dside" rel="me">на русском</a></li>
 		<li>в Telegram: <a href="https://t.me/dside_ru"><strong>@dside_ru</strong></a></li>
 	</ul>
 	<p>Другие способы тоже есть, но либо теряют актуальность, либо совсем её потеряли. Если известного вам способа нет в списке, лучше им не пользоваться 🙂</p>
-	<h2><i class="fa fa-eye"> </i> Вы могли меня видеть:</h2>
+	<h2><span class="icon">👀</span> Вы могли меня видеть:</h2>
 	<ul style="margin-top:0;">
 		<li><a href="https://github.com/D-side">На GitHub</a></li>
 		<li><a href="https://stackoverflow.com/users/2076787/d-side">На Stack Overflow</a>, возможно <a href="/archive/ru_stackoverflow">русскоязычном</a></li>
@@ -27,45 +30,46 @@ icon: home
 	</ul>
 </div>
 <div class='half-column'>
-	<h1><i class="fa fa-list"> </i> Что здесь есть?</h1>
+	<h1><span class="icon">📚</span> Что здесь есть?</h1>
 	<div class="menu">
-		<a href="/blog/"><i class="fa fa-edit"></i> Блог, <small>который изредка пополняется</small></a>
-		<a href="/feed.xml"><i class="fa fa-rss"></i> RSS-лента, <small>на которую можно подписаться</small></a>
-		<a href="/tags/"><i class="fa fa-tag"></i> Метки, <small>под которыми посты блога</small></a>
-		<a href="/archive/ru_stackoverflow/"><i class="fa fa-archive"></i> Архив ответов с ru.SO, <small>откуда я ушёл</small></a>
-		<a href="/archive/ru_meta_stackoverflow/"><i class="fa fa-archive"></i> Архив ответов с Меты ru.SO, <small>ибо см. выше</small></a>
+		<a href="/blog/"><span class="icon">📝</span> Блог, <small>который изредка пополняется</small></a>
+		<a href="/feed.xml"><span class="icon">📜</span> RSS-лента, <small>на которую можно подписаться</small></a>
+		<a href="/tags/"><span class="icon">🏷️</span> Метки, <small>под которыми посты блога</small></a>
+		<a href="/archive/ru_stackoverflow/"><span class="icon">📦</span> Архив ответов с ru.SO, <small>откуда я ушёл</small></a>
+		<a href="/archive/ru_meta_stackoverflow/"><span class="icon">📦</span> Архив ответов с Меты ru.SO, <small>ибо см. выше</small></a>
 	</div>
-	<h2><i class="fa fa-check-square-o"> </i> В последнее время:</h2>
+	<h2><span class="icon">✅</span> В последнее время:</h2>
 	{% for post in site.posts limit:1 %}
 	<article class="block">
 	  <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 	  <p>{{ post.excerpt }}</p>
 		<div class="menu">
-			<a href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-forward"></i> Читать продолжение</a>
+			<a href="{{ post.url | prepend: site.baseurl }}"><span class="icon">⏩</span> Читать продолжение</a>
 		</div>
 	  <ul class="tags">
 			<li>{% include date.html date=post.date %}</li>
 	    {% for tag in post.tags %}
 	      <li>
-	        <span><i class="fa fa-tag"></i> {{ tag }}</span>
+	        <span><span class="icon">🏷️</span> {{ tag }}</span>
 	      </li>
 	    {% endfor %}
 	  </ul>
 	</article>
 	{% endfor %}
 	{% if site.upcoming.size > 0 %}
-	<h2><i class="fa fa-square-o"> </i> В ближайшее время:</h2>
+	<h2><span class="icon">⬜</span> </i> В ближайшее время:</h2>
 	{% for topic in site.upcoming %}
 	<article class="block">
 	  <p>{{ topic.content }}</p>
 	  <ul class="tags">
 	    {% for tag in topic.tags %}
 	      <li>
-	        <span><i class="fa fa-tag"></i> {{ tag }}</span>
+	        <span><span class="icon">🏷️</span> {{ tag }}</span>
 	      </li>
 	    {% endfor %}
 	  </ul>
 	</article>
 	{% endfor %}
 	{% endif %}
+</div>
 </div>

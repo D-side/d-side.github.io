@@ -10,7 +10,6 @@
 
 @import bourbon
 @import fonts
-@import font-awesome
 @import neat
 
 @import paper/variate
@@ -48,9 +47,15 @@ span.faint-highlight
   background-color: $faint-background
 
 span.icon
-  width: 1.5em
+  width: 1.3em
   display: inline-block
   text-align: center
+
+.avatar
+  text-align: center
+  & > img
+    height: auto
+    max-width: 100%
 
 .hide
   display: none
@@ -108,7 +113,7 @@ h1#path
   a
     border: none
     &.disabled
-      color: $theme02
+      opacity: 0.2
 
 .block
   background-color: $faint-background

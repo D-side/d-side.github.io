@@ -1,7 +1,7 @@
 ---
 layout: page
 title: blog
-icon: time
+icon: 🕰️
 ---
 
 <div class="row">
@@ -11,16 +11,16 @@ icon: time
 </div>
 <nav class="full-column pagination">
 	{% if paginator.previous_page %}
-	<a href="{{ paginator.previous_page_path }}">{% include icon.html icon="hand-o-left" %}</a>
+	<a href="{{ paginator.previous_page_path }}">{% include icon.html icon="👈" %}</a>
 	{% else %}
-	<a class="disabled">{% include icon.html icon="hand-o-left" %}</a>
+	<a class="disabled">{% include icon.html icon="👈" %}</a>
 	{% endif %}
 
 	<code>{{paginator.page}}/{{paginator.total_pages}}</code>
 
 	{% if paginator.next_page %}
-	<a href="{{ paginator.next_page_path }}">{% include icon.html icon="hand-o-right" %}</a>
+	<a href="{{ paginator.next_page_path }}">{% include icon.html icon="👉" %}</a>
 	{% else %}
-	<a class="disabled">{% include icon.html icon="hand-o-right" %}</a>
+	<a class="disabled">{% include icon.html icon="👉" %}</a>
 	{% endif %}
 </nav>
