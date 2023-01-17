@@ -3,6 +3,9 @@ layout: scaffold
 ---
 <main>
   <article>
+    <blockquote>
+      ⚠️ Обращайте внимание на даты.<br>Этот блог больше не ведётся с 17 января 2023, {% assign stopped = "2023-01-17" | date: "%s" %}{% assign created = page.date | date: "%s" %}{% assign days = stopped | minus: created | divided_by: 86400 %} и на тот момент с написания этой страницы {% include pluralize-ru.html n=days one='прошёл' few='прошло' many='прошло' %} {{ days }} {% include pluralize-ru.html n=days one='день' few='дня' many='дней' %}{% assign years = days | divided_by: 365.25 | round %}{% if years > 0 %} ({{ years }} {% include pluralize-ru.html n=years one='год' few='года' many='лет' %}){% endif %}.
+    </blockquote>
     {{ content }}
   </article>
   <div>{% include date.html date=page.date %}</div>

@@ -1,0 +1,12 @@
+{%- assign n = include.n | round | abs -%}
+{%- assign mod10 = n | modulo: 10 -%}
+{%- assign mod100 = n | modulo: 100 -%}
+{%- if mod100 >= 11 and mod100 <= 14 -%}
+  {{- include.many -}}
+{%- elsif mod10 == 1 -%}
+  {{- include.one -}}
+{%- elsif mod10 >= 2 and mod10 <= 4 -%}
+  {{- include.few -}}
+{%- else -%}
+  {{- include.many -}}
+{%- endif -%}

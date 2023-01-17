@@ -32,13 +32,11 @@ icon: 🏠
 <div class='half-column'>
 	<h1><span class="icon">📚</span> Что здесь есть?</h1>
 	<div class="menu">
-		<a href="/blog/"><span class="icon">📝</span> Блог, <small>который изредка пополняется</small></a>
-		<a href="/feed.xml"><span class="icon">📜</span> RSS-лента, <small>на которую можно подписаться</small></a>
 		<a href="/tags/"><span class="icon">🏷️</span> Метки, <small>под которыми посты блога</small></a>
 		<a href="/archive/ru_stackoverflow/"><span class="icon">📦</span> Архив ответов с ru.SO, <small>откуда я ушёл</small></a>
 		<a href="/archive/ru_meta_stackoverflow/"><span class="icon">📦</span> Архив ответов с Меты ru.SO, <small>ибо см. выше</small></a>
+		<a href="/blog/"><span class="icon">📝</span> Блог, <small>который больше не пополняется</small></a>
 	</div>
-	<h2><span class="icon">✅</span> В последнее время:</h2>
 	{% for post in site.posts limit:1 %}
 	<article class="block">
 	  <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
@@ -56,20 +54,5 @@ icon: 🏠
 	  </ul>
 	</article>
 	{% endfor %}
-	{% if site.upcoming.size > 0 %}
-	<h2><span class="icon">⬜</span> </i> В ближайшее время:</h2>
-	{% for topic in site.upcoming %}
-	<article class="block">
-	  <p>{{ topic.content }}</p>
-	  <ul class="tags">
-	    {% for tag in topic.tags %}
-	      <li>
-	        <span><span class="icon">🏷️</span> {{ tag }}</span>
-	      </li>
-	    {% endfor %}
-	  </ul>
-	</article>
-	{% endfor %}
-	{% endif %}
 </div>
 </div>
