@@ -13,10 +13,10 @@ en: false
 	<div class="menu">
 		<a href="/">{% include icon.html icon="🌍" %} Доступно на русском! <small>Даже подробнее.</small></a>
 	</div>
-	<h1>{% include icon.html icon="👤" %}  My name is:</h1>
+	<h1>{% include icon.html icon="👤" %}  Who:</h1>
 	<p><strong>Pavel Peganov</strong> aka <strong>D-side</strong>.</p>
 	<p>Mostly a programmer, that once used to aim for game development, but is currently spelunking within the depths of the servers. Sometimes I also work on other stuff: education, self-education, translations, reflection, small-scale engineering and also pretty often on <em>pointless nonsense</em>.</p>
-	<h2>{% include icon.html icon="✉️" %} You can contact me:</h2>
+	<h2 id="contacts">{% include icon.html icon="✉️" %} Contacts:</h2>
 	<ul style="margin-top:0;">
 		<li>via e-mail: <a href="mailto:me@dside.ru?subject=Привет"><strong>me@dside.ru</strong></a></li>
 		<li>via Matrix: <a href="https://matrix.to/#/@dside:dside.ru"><strong>@dside:dside.ru</strong></a></li>
@@ -24,7 +24,7 @@ en: false
 		<li>on Telegram: <a href="https://t.me/dside_ru"><strong>@dside_ru</strong></a></li>
 	</ul>
 	<p>While you may know of other ways not listed here, these are the ones I prefer and frequent the most. Use others at your own peril 🙂</p>
-	<h2>{% include icon.html icon="👀" %} You might have seen me:</h2>
+	<h2>{% include icon.html icon="👀" %} Presence:</h2>
 	<ul style="margin-top:0;">
 		<li><a href="https://github.com/D-side">On GitHub</a></li>
 		<li><a href="https://stackoverflow.com/users/2076787/d-side">On Stack Overflow</a></li>
@@ -41,3 +41,23 @@ en: false
 	<p>Should demand rise, I might start doing so. But as it stands now, I barely find time to post even just in Russian.</p>
 </div>
 </div>
+
+<script type="text/javascript">
+	let format = new Intl.DateTimeFormat('default', { timeStyle: 'short', timeZone: 'Europe/Moscow' });
+	  function updateTime() {
+	  var container = document.getElementById("local-time");
+	  if (container === null) {
+		container = document.createElement("p");
+		container.setAttribute("id", "local-time");
+		document.getElementById("contacts").insertAdjacentElement("afterend", container);
+	  };
+	  let now = new Date();
+	  text = `🕰️ My local time right now is ${format.format(now)}.`;
+	  container.textContent = text;
+	};
+  
+	let now = new Date();
+	let nextMinuteIn = 60000 - (now.getSeconds * 1000 + now.getMilliseconds());
+	setTimeout(() => setInterval(updateTime, 60000), nextMinuteIn);
+	updateTime();
+</script>

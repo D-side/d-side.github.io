@@ -19,7 +19,7 @@
 @import syntax
 
 $faint-background: transparentize($theme01, 0.5)
-$no-print-border-color: transparentize($theme08, 0.7)
+$no-print-border-color: transparentize($theme08, 0.85)
 
 // Denser print layout
 @media print
@@ -32,8 +32,15 @@ $no-print-border-color: transparentize($theme08, 0.7)
   .print-only
     display: none
 
-.no-print
+// Firefox seems to get freaky about styling the details tag,
+// the background takes over the margin, whereas without
+// the border it does no such thing.
+.no-print:not(:empty):not(details)
   border: 2px dashed $no-print-border-color
+  // Outset the border, hopefully without
+  // impacting the rest of the layout
+  margin: -0.15em
+  padding: 0.15em
 
 details.no-print-collapsed > summary
   box-sizing: border-box

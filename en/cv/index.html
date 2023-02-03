@@ -94,6 +94,7 @@ side_projects:
     Over <time>12.2017-02.2018</time> (on-and-off over a couple months) I built [a font dissector/patcher](https://github.com/D-side/ftl_font) after another update introduced proper support for multiple languages but reworked some of the stuff under the hood, breaking compatibility with prior modifications. The game introduced official Russian localization shortly after, but the team still relied on font modification to add icons that made the UI more succinct in their "Arsenal+" overhaul mod they built in my absence.
 - title: "Miscellaneous"
   subtitle: "Some other projects that didn't deserve full entries on the list (yet?)"
+  no-print: true
   description: |
     - [This very website](/en/) and its [Sass](https://sass-lang.com/)'y design showcases my HTML[-fu](https://en.wiktionary.org/wiki/-fu)
     - I run [a public digital garden](https://garden.dside.ru), though I don't tend to it very regularly
@@ -112,10 +113,10 @@ side_projects:
     <h3>Pavel Peganov<br/>
     <small>Software engineer</small></h3>
 
-    <p><strong><span class="icon">✉️</span> Contacts:</strong> <a href="mailto:me+cv@dside.ru">me+cv@dside.ru</a>, <a href="https://t.me/dside_ru">t.me/dside_ru</a>, <a href="https://matrix.to/#/@dside:dside.ru">@dside:dside.ru (Matrix)</a><br/>
-    <strong><span class="icon">👤</span> Profiles:</strong> <a href="https://www.linkedin.com/in/dside">LinkedIn</a>, <a href="https://github.com/D-side">GitHub</a>, <a href="https://stackoverflow.com/users/2076787/d-side">StackOverflow</a>, <a href="https://mastodon.online/@dside">Fediverse (Mastodon)</a><br/>
-    <strong><span class="icon">📚</span> Languages:</strong> English (proficient, around C1), Russian (native)<br/>
-    <strong><span class="icon">🌐</span> Presently in:</strong> Russia (GMT+3)</p>
+    <p><span class="icon">✉️</span> <a href="mailto:me+cv@dside.ru">me+cv@dside.ru</a>, <a href="https://t.me/dside_ru">t.me/dside_ru</a>, <a href="https://matrix.to/#/@dside:dside.ru">@dside:dside.ru (Matrix)</a><br/>
+    <span class="icon">👤</span> <a href="https://www.linkedin.com/in/dside">LinkedIn</a>, <a href="https://github.com/D-side">GitHub</a>, <a href="https://stackoverflow.com/users/2076787/d-side">StackOverflow</a>, <a href="https://mastodon.online/@dside">Fediverse (Mastodon)</a><br/>
+    <span class="icon">📚</span> English (proficient, around C1), Russian (native)<br/>
+    <strong><span class="icon">🌐</span> Presently in:</strong> Russia (GMT+3) <span id="local-time" class="no-print"></span></p>
 
     <p>I build software, <strong>dabbling in code since about 2009</strong> when I wanted to make videogames and <strong>working professionally since 2014</strong> in roles ranging from tech support and backend developer to technical consultant and development team lead, even tried my hand at architecting.</p>
     <p>I love small-scale digital solutions and open-source software, concerned with data privacy and self-reliance, but also worked on bigger distributed systems. I strive to build solutions that help people (including myself) save time while remaining themselves.</p>
@@ -160,7 +161,7 @@ side_projects:
   <h4>🔧 Side projects</h4>
 
   {% for project in page.side_projects %}
-  <details{% if project.open %} open{% endif %}>
+  <details{% if project.open %} open{% endif %} {% if project.no-print %}class="no-print"{% endif %}>
     <summary>
       <h5>{{ project.title }}
           {% if project.past %}<small>⏸️</small>{% endif %}
@@ -210,4 +211,19 @@ side_projects:
   document.getElementById("toggle-all").addEventListener("click", toggle_all);
   document.getElementById("toggle-all-container").classList.remove("hide");
   if (window.location.hash == "#full") { toggle_all(); };
+</script>
+
+<script type="text/javascript">
+	let format = new Intl.DateTimeFormat('default', { timeStyle: 'short', timeZone: 'Europe/Moscow' });
+	  function updateTime() {
+	  var container = document.getElementById("local-time");
+	  let now = new Date();
+	  text = `(local time: ${format.format(now)})`;
+	  container.textContent = text;
+	};
+
+	let now = new Date();
+	let nextMinuteIn = 60000 - (now.getSeconds * 1000 + now.getMilliseconds());
+	setTimeout(() => setInterval(updateTime, 60000), nextMinuteIn);
+	updateTime();
 </script>
