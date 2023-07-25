@@ -118,16 +118,15 @@ side_projects:
     <span class="icon">📚</span> English (proficient, around C1), Russian (native)<br/>
     <strong><span class="icon">🌐</span> Presently in:</strong> Russia (GMT+3) <span id="local-time" class="no-print"></span></p>
 
-    <p>I build software, <strong>dabbling in code since about 2009</strong> when I wanted to make videogames and <strong>working professionally since 2014</strong> in roles ranging from tech support and backend developer to technical consultant and development team lead, even tried my hand at architecting.</p>
-    <p>I love small-scale digital solutions and open-source software, concerned with data privacy and self-reliance, but also worked on bigger distributed systems. I strive to build solutions that help people (including myself) save time while remaining themselves.</p>
-    <p>I primarily use <strong>Ruby</strong>, especially at work, but built working software in numerous other languages, including low-level <strong>C</strong> and functional <strong>Clojure</strong>, and altered existing software in a whole bunch of others too (Python, Lua, Golang, TypeScript…). My interests in software aren't limited to my duties.</p>
+    <p>I build software, <strong>dabbling in code since about 2009</strong> when I wanted to make videogames and <strong>working professionally since 2014</strong> in roles ranging from tech support and backend developer to technical consultant and development team lead, with a bit of architecture in between.</p>
+    <p>I've worked on systems old and new; building, re-building, enhancing and maintaining. I prefer small flexible solutions to massive powerhouses. «Low coupling & high cohesion» is my <strong>only</strong> motto in architercture, I see the rest AS just too context-dependent to be universal. My leadership style is very hands-off: create an environment, set a course and let go, supporting as necessary.</p>
+    <p>For programming I primarily use <strong>Ruby</strong>, but have also built working software in numerous other languages, including low-level <strong>C</strong> and functional <strong>Clojure</strong>, and altered existing software in a whole bunch of others too (Python, Lua, Golang, TypeScript…). My interests in software aren't limited to my duties.</p>
     <!-- <blockquote>📝 Note: I've also written plenty of stuff in Russian, <a href="/cv">the Russian version of this CV</a> for those.</blockquote> -->
     <!-- If the above comment is still here, that means I have not built a Russian version of this CV yet 🤷‍♀️ -->
     <div class="no-print">
         <ul>
             <li><span class="icon">➕</span> Blocks with a <abbr title="Well, *like* this one, but not this one"><span class="faint-highlight">slightly highlighted background</span></abbr> can be expanded and collapsed with a click or a tap</li>
-            <li><span class="icon">🧾</span> The default state of the page is designed to provide a concise summary and to save paper</li>
-            <li id="toggle-all-container" class="hide"><span class="icon">🖱️</span> <a id="toggle-all">Click here</a> to expand/collapse everything (I <em>really</em> needed that function when writing this)</li>
+            <li><span class="icon">⏱️</span> Version shortcuts: <a href="#brief">abridged (default, to save paper)</a>, <a href="#full">complete (fully expanded)</a></li>
             <li><span class="icon">🚧</span> What's outlined with a dashed border (like this list) is automatically <strong>skipped</strong> in print</li>
             <li><span class="icon">🔗</span> This document contains hyperlinks; they aren't essential, but may be inaccessible after printing</li>
         </ul>
@@ -140,13 +139,15 @@ side_projects:
     <details>
         <summary>
             <h5>
-                {% if job.company.website %}
-                <a href="{{ job.company.website }}">{{ job.company.name }}</a>
-                {% else %}
-                {{ job.company.name }}
-                {% endif %}
-              <br/><small><time>{{ job.when }}</time> {{ job.position }}
-              {% if job.technologies %}<br/>⚙️ {{ job.technologies }}{% endif %}</small>
+              <small><time>{{ job.when }}</time></small>
+              {% if job.company.website %}
+              <a href="{{ job.company.website }}">{{ job.company.name }}</a>
+              {% else %}
+              {{ job.company.name }}
+              {% endif %}
+              <br/>
+              <small>🎩 {{ job.position }}</small>
+              {% if job.technologies %}<br/><small>⚙️ {{ job.technologies }}</small>{% endif %}
             </h5>
         </summary>
         {{ job.description | markdownify }}
@@ -200,22 +201,28 @@ side_projects:
 </section>
 
 <script type="text/javascript">
-  let toggle_all = function(_, _) {
-    let closed_spoilers = document.querySelectorAll("details:not([open])");
-    if (closed_spoilers.length == 0) {
-      document.querySelectorAll("details").forEach((e) => e.removeAttribute("open"))
+  function openAll() {
+    document.querySelectorAll("details:not([open])").forEach((e) => e.setAttribute("open", true))
+  }
+
+  function closeAll() {
+    document.querySelectorAll("details").forEach((e) => e.removeAttribute("open"));
+  }
+
+  function hashchange() {
+    if (window.location.hash == "#full") {
+      openAll();
     } else {
-      closed_spoilers.forEach((e) => e.setAttribute("open", true))
-    }
-  };
-  document.getElementById("toggle-all").addEventListener("click", toggle_all);
-  document.getElementById("toggle-all-container").classList.remove("hide");
-  if (window.location.hash == "#full") { toggle_all(); };
+      closeAll();
+    };
+  }
+  window.addEventListener("hashchange", hashchange);
+  hashchange();
 </script>
 
 <script type="text/javascript">
 	let format = new Intl.DateTimeFormat('default', { timeStyle: 'short', timeZone: 'Europe/Moscow' });
-	  function updateTime() {
+	function updateTime() {
 	  var container = document.getElementById("local-time");
 	  let now = new Date();
 	  text = `(local time: ${format.format(now)})`;
