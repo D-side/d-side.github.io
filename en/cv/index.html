@@ -3,6 +3,15 @@ title: CV
 layout: page-en
 icon: 👤
 # The contents are packaged into YAML to make future redesigns, if ever necessary, easier.
+summary: |
+  I build software, **dabbling in code since about 2009** when I wanted to make videogames and **working professionally since 2014** in roles ranging from tech support and backend developer to technical consultant, development team lead and architect.
+
+  For programming I primarily use **Ruby**, but have also built working software in numerous other languages, including low-level **C** and functional **Clojure**, and altered existing software in a whole bunch of others too (Python, Lua, Golang, TypeScript…).
+
+  I'm especially interested in <abbr title="Free and Open Source Software">FOSS</abbr>, sovereign digital infrastructure, open federated networks, knowledge management and Semantic Web, and especially opposed to manipulative industries like advertisement, gambling and the vast majority of "Web3" and mobile videogames. Generally curious, so may be interested in things in between.
+
+  My mission is to extend people's lives by helping them spend less time on the mundane and more on what's meaningful for them beyond basic survival.
+
 work_experience:
   - company:
       name: DataArt
@@ -60,7 +69,7 @@ work_experience:
 
       We had a decent proof-of-concept after a few months of work, which looking back I find surprising, considering that I myself was the entire development team, and that management did not really have any kind of vision for the project — meaning I effectively had to define the whole product, from stories and features to implementation. This was back before I even knew these terms.
 
-      The company was seriously struggling financially by the end of the year, and after payroll delays reached several full months in length, I decided to leave. This got mildly ugly, with management employing straight up FUD to convince me to stay, saying I would not find a better paying role without an academic degree (which is commonly believed in the area), but I was dead-certain that I would be better valued elsewhere — and later went on to prove it.
+      The company was seriously struggling financially by the end of the year, and after payroll delays reached several full months in length, I decided to leave. This got mildly ugly, with management employing straight up <abbr title="Fear, Uncertainty and Doubt, a common manipulation tactic">FUD</abbr> to convince me to stay, saying I would not find a better paying role without an academic degree (which is commonly believed in the area), but I was dead-certain that I would be better valued elsewhere — and later went on to prove it.
 
 side_projects:
 - title: "Self-hosting & home automation"
@@ -69,15 +78,14 @@ side_projects:
   description: |
     As a hobby, I host numerous network services for use by myself and a small circle of friends and family. I had to learn numerous topics regarding computer networks, protocols and server administration. My setup is based on hand-rolled container definitions and does not involve any application management solutions such as YunoHost (for historical reasons really, it started off simple enough, but by the time I learned of other feasible solutions, migration would be a serious hassle).
 
-    Some of the applications that have functioned there at least for some time: Nextcloud, Gitea, NodeRED, Home Assistant, Rhasspy, Calibre, NocoDB, Synapse (Matrix server), Penpot, Kiwix, Oauth2-proxy, Jellyfin, F-Droid repo builder, OnlyOffice — there are more, but some are unimportant and some I would prefer to not disclose.
+    Some of the applications that have functioned there at least for some time: Nextcloud, Forgejo, NodeRED, Home Assistant, Rhasspy, Calibre, NocoDB, Synapse (Matrix server), Penpot, Kiwix, Oauth2-proxy, Jellyfin, F-Droid repo builder, OnlyOffice and some more.
 
-    This has proved to be especially helpful during wide-band blockages by Russian authorities since 2018 (during their attempts at blocking Telegram) and later during numerous service suspensions due to sanctions imposed on Russia in 2022. Plenty of chances to learn the importance of digital self-reliance the hard way.
+    This has proved to be especially helpful during wide-band blockages by Russian authorities since 2018 (during their attempts at blocking Telegram, with massive collateral damage including impact on Google services) and later during numerous service suspensions due to sanctions imposed on Russia in 2022. Plenty of chances to learn the importance of digital self-reliance the hard way.
 
-    Some of the applications are the backbone of my smart home setup, which is designed around the idea of being fully functional offline, for reliability and security reasons. Despite this serious (at the time of writing) limitation it's packed with features and even supports voice control. This required some some deep dives into underlying technologies and even come code fixes that are, technically, contributions to open-source.
+    Some of the applications are the backbone of my smart home setup, which is designed around the idea of being fully functional offline, for reliability and security reasons. Despite this serious limitation it's packed with features, supporting even voice control. This required some some deep dives into underlying technologies and even some contributions to open-source components under the hood.
 - title: "Answering questions on Stack Overflow"
   subtitle: "Research, documentation, participation in community self-governance"
   when: "2014-2017"
-  past: true
   description: |
     Contributed hundreds of answers to the [main Stack Overflow](https://stackoverflow.com/users/2076787/d-side) and [Stack Overflow in Russian](/archive/ru_stackoverflow/). And in the Russian community posted [a number of insightful answers](/archive/ru_meta_stackoverflow/) on community self-governance and moderation (defining and interpreting rules in large communities), participants' mindsets (why people behave the way they do), making sensible decisions in difficult/controversial situations (solving conflicts inside and at the edges of the community) and Russian localization of the platform (which was… an afterthought).
 
@@ -85,7 +93,6 @@ side_projects:
 - title: "Russian Fan Localization for FTL: Faster Than Light"
   subtitle: "Translation, reverse-engineering and modification of game assets"
   when: "2014-2018"
-  past: true
   description: |
     There was this game I used to enjoy, ["FTL: Faster Than Light" by Subset Games](https://subsetgames.com/ftl.html), about managing a spaceship and its crew on the run from a fleet of pursuing ships. It's a game about making tough choices in face of uncertainty and damage control in dire situations. I was totally fine with playing it in English, but frequented its Russian community on VK where many didn't know English very well.
 
@@ -94,43 +101,39 @@ side_projects:
     Over <time>12.2017-02.2018</time> (on-and-off over a couple months) I built [a font dissector/patcher](https://github.com/D-side/ftl_font) after another update introduced proper support for multiple languages but reworked some of the stuff under the hood, breaking compatibility with prior modifications. The game introduced official Russian localization shortly after, but the team still relied on font modification to add icons that made the UI more succinct in their "Arsenal+" overhaul mod they built in my absence.
 - title: "Miscellaneous"
   subtitle: "Some other projects that didn't deserve full entries on the list (yet?)"
-  no-print: true
+  no-print-collapsed: true
   description: |
     - [This very website](/en/) and its [Sass](https://sass-lang.com/)'y design showcases my HTML[-fu](https://en.wiktionary.org/wiki/-fu)
-    - I run [a public digital garden](https://garden.dside.ru), though I don't tend to it very regularly
-    - Working on [a concept of a package manager for knowledge](https://garden.dside.ru/skillforest), only a concept so far
-    - Read data off of electricity meters using [NodeRED](https://nodered.org/) and the vendor's USB-serial adapter
-    - Used to be an elected administrator on a public Terraria server, managing and moderating a community of players
-    - Coded most of the point'n'click adventure "G1Deon: Towards God" which somehow even got published
+    - I run [a public digital garden](https://garden.dside.ru), showcasing hints, practices and knowledge sources
+    - Evolving [my concept of a package manager for knowledge](https://garden.dside.ru/skillforest)
+    - Using [NodeRED](https://nodered.org/) in voice control and other projects around <abbr title="Internet of Things">IoT</abbr>
+
 ---
+
+<div class="no-print">
+  <ul>
+    <li><span class="icon">⏱️</span> <strong>Version shortcuts</strong>: <a href="#brief">abridged (default, designed as a one-page summary)</a>, <a href="#full">complete (fully expanded)</a></li>
+    <li><span class="icon">➕</span> Blocks with a <abbr title="Well, *like* this one, but not this one"><span class="faint-highlight">slightly highlighted background</span></abbr> can be expanded and collapsed with a click or a tap</li>
+    <li><span class="icon">🖨️</span> Chunks outlined with a dashed border will <strong>not</strong> be printed</li>
+    <li><span class="icon">🔗</span> This document contains hyperlinks; they aren't essential, but may be inaccessible after printing</li>
+  </ul>
+</div>
 
 <section>
     <aside class="print-only">
-        🌍 See the full version online at:<br/>
+        See the full story online at:<br/>
         <code>https://dside.ru/en/cv/</code><br/>
-        <img src="/assets/images/cv-qr.png"/>
+        <img src="/assets/images/cv-qr.png"/><br/>
     </aside>
     <h3>Pavel Peganov<br/>
-    <small>Software engineer</small></h3>
+    <small>Software engineer / development team lead</small></h3>
 
     <p><span class="icon">✉️</span> <a href="mailto:me+cv@dside.ru">me+cv@dside.ru</a>, <a href="https://t.me/dside_ru">t.me/dside_ru</a>, <a href="https://matrix.to/#/@dside:dside.ru">@dside:dside.ru (Matrix)</a><br/>
-    <span class="icon">👤</span> <a href="https://www.linkedin.com/in/dside">LinkedIn</a>, <a href="https://github.com/D-side">GitHub</a>, <a href="https://stackoverflow.com/users/2076787/d-side">StackOverflow</a>, <a href="https://mastodon.online/@dside">Fediverse (Mastodon)</a><br/>
+    <span class="icon">👤</span> <a href="https://www.linkedin.com/in/dside">LinkedIn</a>, <a href="https://github.com/D-side">GitHub</a>, <a href="https://stackoverflow.com/users/2076787/d-side">StackOverflow</a>, <a href="https://mastodon.ml/@dside">Fediverse (Mastodon)</a><br/>
     <span class="icon">📚</span> English (proficient, around C1), Russian (native)<br/>
     <strong><span class="icon">🌐</span> Presently in:</strong> Russia (GMT+3) <span id="local-time" class="no-print"></span></p>
 
-    <p>I build software, <strong>dabbling in code since about 2009</strong> when I wanted to make videogames and <strong>working professionally since 2014</strong> in roles ranging from tech support and backend developer to technical consultant and development team lead, with a bit of architecture in between.</p>
-    <p>I've worked on systems old and new: building, re-building, enhancing and maintaining. I prefer small flexible solutions to massive powerhouses. «Low coupling & high cohesion» is my <strong>only</strong> motto in architercture, I see the rest as just too context-dependent to be universal. My leadership style is very hands-off: create an environment, set a course and let go, supporting as necessary.</p>
-    <p>For programming I primarily use <strong>Ruby</strong>, but have also built working software in numerous other languages, including low-level <strong>C</strong> and functional <strong>Clojure</strong>, and altered existing software in a whole bunch of others too (Python, Lua, Golang, TypeScript…). My interests in software aren't limited to my duties.</p>
-    <!-- <blockquote>📝 Note: I've also written plenty of stuff in Russian, <a href="/cv">the Russian version of this CV</a> for those.</blockquote> -->
-    <!-- If the above comment is still here, that means I have not built a Russian version of this CV yet 🤷‍♀️ -->
-    <div class="no-print">
-        <ul>
-            <li><span class="icon">➕</span> Blocks with a <abbr title="Well, *like* this one, but not this one"><span class="faint-highlight">slightly highlighted background</span></abbr> can be expanded and collapsed with a click or a tap</li>
-            <li><span class="icon">⏱️</span> Version shortcuts: <a href="#brief">abridged (default, to save paper)</a>, <a href="#full">complete (fully expanded)</a></li>
-            <li><span class="icon">🚧</span> What's outlined with a dashed border (like this list) is automatically <strong>skipped</strong> in print</li>
-            <li><span class="icon">🔗</span> This document contains hyperlinks; they aren't essential, but may be inaccessible after printing</li>
-        </ul>
-    </div>
+    {{ page.summary | markdownify }}
 </section>
 
 <section>
@@ -153,19 +156,15 @@ side_projects:
         {{ job.description | markdownify }}
     </details>
     {% endfor %}
-    <!-- <h4><time>09.2015-09.2022</time> DataArt</h4>
-    <h4><time>02.2015-17.2014</time> E-Citrus</h4>
-    <h4><time>02.2014-12.2014</time> IAIT "Vector"</h4> -->
 </section>
 
 <section>
   <h4>🔧 Side projects</h4>
-
   {% for project in page.side_projects %}
-  <details{% if project.open %} open{% endif %} {% if project.no-print %}class="no-print"{% endif %}>
+  <details{% if project.open %} open{% endif %} {% if project.no-print-collapsed %}class="no-print-collapsed"{% endif %}>
     <summary>
       <h5>{{ project.title }}
-          {% if project.past %}<small>⏸️</small>{% endif %}
+          {% if project.paused %}<small>⏸️</small>{% endif %}
           <br/><small>{% if project.when %} <time>{{ project.when }}</time> {%endif%}
           {{project.subtitle}}</small></h5></summary>
   {{ project.description | markdownify }}
@@ -234,3 +233,12 @@ side_projects:
 	setTimeout(() => setInterval(updateTime, 60000), nextMinuteIn);
 	updateTime();
 </script>
+
+<style type="text/css">
+@media print {
+  /* Lighten print layout exclusively for CV */
+  header {
+    display: none;
+  }
+}
+</style>
