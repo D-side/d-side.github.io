@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "D:\\side\\",
+    "short_name": "D:\\side\\",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -14,6 +14,5 @@
         }
     ],
     "theme_color": "#fffee7",
-    "background_color": "#fffee7",
-    "display": "standalone"
+    "background_color": "#fffee7"
 }
