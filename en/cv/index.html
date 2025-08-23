@@ -104,11 +104,8 @@ side_projects:
   {% for job in page.work_experience %}
   <h5>
     <small><time>{{ job.when }}</time></small>
-    {% if job.company.website %}
-    <a href="{{ job.company.website }}">{{ job.company.name }}</a>
-    {% else %}
-    {{ job.company.name }}
-    {% endif %} <small><a href="#work-{{forloop.index}}" class="no-print">[{{ forloop.index }}]</a></small>
+    <a href="#work-{{forloop.index}}">{{ job.company.name }}</a>
+    {% if job.company.website %}(<a href="{{ job.company.website }}">website</a>){% endif %}
     <br/>
     <small><span title="Positions" class="icon">🎩</span> {{ job.position }}</small>
     <br/><small><span title="Technology">⚙️</span> {{ job.technology }}</small>
@@ -117,7 +114,7 @@ side_projects:
 </section>
 
 <section>
-  <h4>🔧 Side projects</h4>
+  <h4 id="side-projects">🔧 Side projects</h4>
   {% for project in page.side_projects %}
       <h5><small><time>{{ project.when }}</time></small>
         <a href="#side-{{ forloop.index }}">{{ project.title }}</a>
@@ -127,16 +124,16 @@ side_projects:
 
 <section>
   <h3>📜 Longer story</h3>
+</section>
+
+<section>
   <h4>🛠️ Work experience</h4>
   {% for job in page.work_experience %}
     <h5 id="work-{{ forloop.index }}">
       <small><time>{{ job.when }}</time></small>
-        {{ forloop.index }}.
-        {% if job.company.website %}
-        <a href="{{ job.company.website }}">{{ job.company.name }}</a>
-        {% else %}
         {{ job.company.name }}
-        {% endif %} <small><a href="#work" class="no-print">^</a></small>
+        {% if job.company.website %}(<a href="{{ job.company.website }}">website</a>){% endif %}
+        <small><a href="#work" class="no-print">^</a></small>
         <br/><small>🎩 {{ job.position }}</small>
         <br/><small>⚙️ {{ job.technology }}</small>
     </h5>
@@ -150,7 +147,8 @@ side_projects:
       <h5 id="side-{{ forloop.index }}">
         <small><time>{{ project.when }}</time></small>
         {{ project.title }}
-          <br/><small>🧢 {{project.subtitle}}</small></h5>
+        <small><a href="#side-projects" class="no-print">^</a></small>
+        <br/><small>🧢 {{project.subtitle}}</small></h5>
   {{ project.description | markdownify }}
   {% endfor %}
 </section>
