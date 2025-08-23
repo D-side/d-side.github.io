@@ -19,10 +19,11 @@
 @import syntax
 
 $faint-background: transparentize($theme01, 0.5)
-$no-print-border-color: transparentize($theme08, 0.85)
 
 // Denser print layout
 @media print
+  body
+    font-size: 12px
   h1, h2, h3, h4, h5, h6, header
     margin: 0
   .palette, .no-print, details.no-print-collapsed:not([open])
@@ -32,23 +33,15 @@ $no-print-border-color: transparentize($theme08, 0.85)
   .print-only
     display: none
 
-// Firefox seems to get freaky about styling the details tag,
-// the background takes over the margin, whereas without
-// the border it does no such thing.
-.no-print:not(:empty):not(details)
-  border: 2px dashed $no-print-border-color
+.no-print:not(:empty)
+  $no-print-border-color: transparentize($theme08, 0.7)
+  $no-print-background-color: mix($theme00, $theme08, 90%)
+  border: 1px dashed $no-print-border-color
+  background-color: $no-print-background-color
   // Outset the border, hopefully without
   // impacting the rest of the layout
   margin: -0.15em
   padding: 0.15em
-
-details.no-print-collapsed > summary
-  box-sizing: border-box
-  border: 2px dashed transparent
-
-details.no-print-collapsed:not([open]) > summary
-  box-sizing: border-box
-  border-color: $no-print-border-color
 
 span.faint-highlight
   background-color: $faint-background
@@ -112,7 +105,6 @@ h1#path
   &>span:after
     content: "\\"
   @import cursor
-
 
 .pagination
   text-align: center
@@ -179,9 +171,6 @@ ul.tags
   & > li
     display: inline-block
     margin-right: 0.3em
-
-// .fa
-//   text-shadow: .1em .1em .3em transparentize($theme0E, 0.3)
 
 .menu
   a
