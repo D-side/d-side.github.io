@@ -5,22 +5,8 @@ icon: 🕰️
 ---
 
 <div class="row">
-	{% for post in paginator.posts %}
+	{% for post in site.posts %}
 	{% include post.html post=post %}
 	{% endfor %}
 </div>
-<nav class="full-column pagination">
-	{% if paginator.previous_page %}
-	<a href="{{ paginator.previous_page_path }}">{% include icon.html icon="👈" %}</a>
-	{% else %}
-	<a class="disabled">{% include icon.html icon="👈" %}</a>
-	{% endif %}
-
-	<code>{{paginator.page}}/{{paginator.total_pages}}</code>
-
-	{% if paginator.next_page %}
-	<a href="{{ paginator.next_page_path }}">{% include icon.html icon="👉" %}</a>
-	{% else %}
-	<a class="disabled">{% include icon.html icon="👉" %}</a>
-	{% endif %}
 </nav>
