@@ -47,28 +47,9 @@ icon: 🏠
 	</article>
 	<h1><span class="icon">📚</span> Что здесь есть?</h1>
 	<div class="menu">
-		<a href="/tags/"><span class="icon">🏷️</span> Метки, <small>под которыми посты блога</small></a>
 		<a href="/archive/ru_stackoverflow/"><span class="icon">📦</span> Архив ответов с ru.SO, <small>откуда я ушёл</small></a>
 		<a href="/archive/ru_meta_stackoverflow/"><span class="icon">📦</span> Архив ответов с Меты ru.SO, <small>ибо см. выше</small></a>
-		<a href="/blog/"><span class="icon">📝</span> Блог, <small>который больше не пополняется</small></a>
 	</div>
-	{% for post in site.posts limit:1 %}
-	<article class="block">
-	  <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-	  <p>{{ post.excerpt }}</p>
-		<div class="menu">
-			<a href="{{ post.url | prepend: site.baseurl }}"><span class="icon">⏩</span> Читать продолжение</a>
-		</div>
-	  <ul class="tags">
-			<li>{% include date.html date=post.date %}</li>
-	    {% for tag in post.tags %}
-	      <li>
-	        <span><span class="icon">🏷️</span> {{ tag }}</span>
-	      </li>
-	    {% endfor %}
-	  </ul>
-	</article>
-	{% endfor %}
 </div>
 </div>
 
